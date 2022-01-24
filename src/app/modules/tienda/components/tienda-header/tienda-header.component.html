@@ -1,0 +1,129 @@
+<header>
+    <nav class="navbar border-dark navbar-light p-1 pt-4">
+      <div class="container-fluid pb-3 ms-2 me-2 mt-3">
+        <a class="navbar-brand" routerLink="/">
+          <img src="/assets/img/logos/LOGONEGRO.svg" alt="" width="250">
+        </a>
+        <form class="d-flex justify-content-center align-items-center">
+          <input class="form-control col-md-6 me-1 border-dark" type="search" placeholder="Escriba su busqueda" aria-label="Search">
+          <button class="btn btn-outline-dark ms-1" type="submit">Buscar</button>
+        </form>
+        <ul class="nav justify-content-end align-items-center">
+          <div class="nav align-items-center">
+            <li class="nav-item ">
+              <a class="nav-link text-dark" routerLink="sobre-nosotros">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" routerLink="contacto">Contacto</a>
+            </li>
+            <li class="nav-item">
+             <!-- <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"><img src="../assets/IMAGENES/ICONOS/USERBLACK.svg" href="#" width="32"></a>
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Usuario</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                
+              </div>
+            </div> -->
+  
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button"><img src="/assets/img/icons/USERBLACK.svg" href="#" width="32"></a>
+              <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel">Entrar</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div ngNativeValidate class="modal-body d-flex align-items-center">
+                      <form class="col g-3 d-flex flex-column">
+                        <div class="col-auto mt-3 ms-5 me-5">
+                          <label for="inputEmail2" class="form-label">Email</label>
+                          <input type="text" class="form-control bg-light w-80" id="inputEmail2" placeholder="email@example.com" required>
+                        </div>
+                        <div class="col-auto mt-3 ms-5 me-5">
+                          <label for="inputPassword2" class="form-label">Password</label>
+                          <input type="password" class="form-control bg-light" id="inputPassword2" placeholder="Password" required>
+                        </div>
+                        <div class="col-auto mt-4 ms-auto me-auto">
+                          <button type="submit" class="btn btn-outline-dark mb-3">Entrar</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Registrarse</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel2">Registrarse</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                      <form ngNativeValidate class="row g-3 w-80">
+                        <div class="row g-3">
+                          <div class="col form-floating">
+                            <input type="text" class="form-control bg-light" placeholder="Christian Manuel" id="inputFirstName4" aria-label="First name" required>
+                            <label for="inputFirstName4" class="form-label">Nombre</label>
+                          </div>
+                          <div class="col form-floating">
+                            <input type="text" class="form-control bg-light" placeholder="Moreno Saldaña" aria-label="Last name" required>
+                            <label for="inputLastName4" class="form-label">Apellidos</label>
+                          </div>
+                          <div class="col form-floating">
+                            <input type="text" class="form-control bg-light" placeholder="More" aria-label="User" required>
+                            <label for="inputUser4" class="form-label">Usuario</label>
+                          </div>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col form-floating">
+                            <input type="email" class="form-control bg-light" placeholder="ChristianMoreno@gmail.com" aria-label="Email" required>
+                            <label for="inputEmail4" class="form-label">Email</label>
+                          </div>
+                        </div>
+                        <div class="row g-3">
+                          <div class="col form-floating">
+                            <input type="password" class="form-control bg-light" placeholder="Contraseña" aria-label="Password" required>
+                            <label for="inputPassword4" class="form-label">Contraseña</label>
+                          </div>
+                          <div class="col form-floating">
+                            <input type="Password" class="form-control bg-light" placeholder="Repita Contraseña" aria-label="Password" required>
+                            <label for="inputPassword4" class="form-label">Repita Contraseña</label>
+                          </div>
+                        </div>
+                        <div class="col-auto mt-4 ms-auto me-auto">
+                          <button type="submit" class="btn btn-outline-dark mb-3">Registrarme</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Entrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="container-fluid w-100 justify-content-evenly align-items-center pt-4 pb-3">
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/guitarras">Guitarras</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/bajos">Bajos</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/baterias">Baterias</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/teclados">Teclados</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/microfonos">Microfonos</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/dj">DJ</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/vientos">Viento</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/tradicional">Tradicional</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="productos/software">Software</button>
+      </div>
+    </nav>
+  </header>
+  <svg src="../assets/img/waves/OLAMENU.svg" viewBox="0 0 1440 320">
+    <path fill="#fafad2" fill-opacity="1" d="M0,256L15,218.7C30,181,60,107,90,85.3C120,64,150,96,180,112C210,128,240,128,270,154.7C300,181,330,235,360,234.7C390,235,420,181,450,160C480,139,510,149,540,165.3C570,181,600,203,630,224C660,245,690,267,720,250.7C750,235,780,181,810,160C840,139,870,149,900,154.7C930,160,960,160,990,138.7C1020,117,1050,75,1080,96C1110,117,1140,203,1170,229.3C1200,256,1230,224,1260,192C1290,160,1320,128,1350,122.7C1380,117,1410,139,1425,149.3L1440,160L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path>
+  </svg>

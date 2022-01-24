@@ -1,0 +1,19 @@
+.sobre{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .titulo{
+        margin: 10px 0 10px;
+    }
+    .info{
+        margin: 20px 0 50px;
+        width: 60%;
+        text-align: center;
+    }
+    .mapa{
+        margin: 10px 0 20px;
+        width: 60%;
+        text-align: center;
+    }
+}

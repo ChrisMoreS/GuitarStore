@@ -1,0 +1,23 @@
+.intro{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .contenido{
+        .titular{
+            img{
+                margin: 0 0 20px;
+            }
+            h3{
+                margin: 20px 0 20px 5px;
+            }
+        }
+        .intro{
+            p{
+                margin: 0 0 0 40px;
+            }
+            h5{
+                margin: 20px 0 0 80px;
+            }
+        }
+    }
+}

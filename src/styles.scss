@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.form-control:focus{
+    border-color: #fec503 !important;
+    box-shadow: inset 0px 0px 1px #fec503, 0 0 8px #fec503!important;
+    outline: 0;
+}
+::selection {
+    background: #fec503;
+    text-shadow: none;
+}

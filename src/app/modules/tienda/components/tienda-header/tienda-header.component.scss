@@ -1,0 +1,35 @@
+$link-light-grey: #6c757d;
+$primary-orange: #fec503;
+$footer-background-light-grey: lightgoldenrodyellow;
+$footer-background-grey: lightgoldenrodyellow;
+$social-buttons-circle-dark-grey: #1a1d20;
+
+header{
+    background-color: lightgoldenrodyellow;
+    width: 100%;
+    nav{
+        div{
+            form{
+                input{
+                    background-color: lightgoldenrodyellow;
+                    input:hover{
+                      outline: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+a {
+    color: $link-light-grey;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+  button:hover{
+    box-shadow: 5px 5px 0px #fec503;
+    top: -15px;
+    left: -15px;
+}
