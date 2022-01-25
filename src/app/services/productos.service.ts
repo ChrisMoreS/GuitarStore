@@ -14,7 +14,7 @@ export class ProductosService {
     return this.http.get<any>('/ConexionGuitarStore/Productos.php');
   }
   
-  ObtenerUnProducto(idProducto: String){
+  ObtenerUnProducto(idProducto: string){
     return this.http.get<any>(`/ConexionGuitarStore/Productos.php?idProducto=${idProducto}`);
   }
 
@@ -22,22 +22,22 @@ export class ProductosService {
     return this.http.post('/ConexionGuitarStore/Productos.php',formData);
   }
 
-  EditarUnProducto(idProducto: String, formData:Productos){
+  EditarUnProducto(idProducto: string, formData:Productos){
     return this.http.put(`/ConexionGuitarStore/Productos.php?idProducto=${idProducto}`,formData);
   }
 
-  BorrarUnProducto(idProducto: String){
+  BorrarUnProducto(idProducto: string){
     return this.http.delete(`/ConexionGuitarStore/Productos.php?idProducto=${idProducto}`);
   }
 
   // Instrumentos
 
-  ObtenerProductoPorCategoria(NombreCategoria: String){
-    return this.http.delete(`/ConexionGuitarStore/Productos.php?NombreCategoria=${NombreCategoria}`)
+  ObtenerProductoPorCategoria(NombreCategoria: string){
+    return this.http.get(`/ConexionGuitarStore/Productos.php?NombreCategoria=${NombreCategoria}`)
   }
 
-  ObtenerProductoPorMarca(NombreMarca: String){
-    return this.http.delete(`/ConexionGuitarStore/Productos.php?NombreMarca=${NombreMarca}`)
+  ObtenerProductoPorMarca(NombreMarca: string){
+    return this.http.get(`/ConexionGuitarStore/Productos.php?NombreMarca=${NombreMarca}`)
   }
 
 }

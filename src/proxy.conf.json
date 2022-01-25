@@ -1,0 +1,7 @@
+{
+    "/ConexionGuitarStore/*":{
+        "target": "http://localhost",
+        "secure": false,
+        "logLavel": "debug"
+    }
+}
