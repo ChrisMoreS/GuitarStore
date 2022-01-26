@@ -2,217 +2,167 @@
     <h2>Productos</h2>
     <p class="text-center w-50 mt-5">Podrás encontrar tu instrumento a medida, solo tienes que buscarlo en una de las categorias que ofrecemos, adelante, ¡Busca tu instrumento perfecto!</p>
 </div>
-
-
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-    <div class="container-fluid ms-2 mt-5 mb-5 me-2">
-        <div class="container-fluid w-100 me-5 d-flex flex-row justify-content-between">
-            <h3>Guitarras</h3>
-            <a class="text-decoration-none link-dark text-center" routerLink="guitarras"><h5>Ver más guitarras...</h5></a>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Guitarras</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="guitarras"><h5>Ver más guitarras...</h5></a>
         </div>
-        <div class="container-fluid d-flex flex-row no-wrap">
-            <div class="d-flex flex-row no-wrap" *ngFor="let guitarras of ListaGuitarras; let i = index" >
-                <div class="card d-flex align-items-center justify-content-center ms-4 me-3" style="width: 15rem;" *ngIf="i < 5">
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let guitarras of ListaGuitarras; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
                     <img src="/assets/img/products/{{guitarras.ImagenProducto}}" class="card-img-top">
                     <div class="card-body">
-                      <h5 class="card-title">{{guitarras.NombreProducto}}</h5>
-                      <p class="card-text mt-4">{{guitarras.DescripcionProducto}}</p>
+                        <h5 class="card-title">{{guitarras.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{guitarras.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{guitarras.CategoriaProducto}}">Go somewhere</a>
                     </div>
-                    <a href="#" class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom">Go somewhere</a>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Bajos</h3>
-            <a class="text-decoration-none link-dark text-center" routerLink="guitarras"><h5>Ver más bajos...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Bajos</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="bajos"><h5>Ver más bajos...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center"  *ngFor="let bajos of ListaBajos; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{bajos.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{bajos.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{bajos.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{bajos.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Baterias</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más baterias...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Baterias</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="baterias"><h5>Ver más baterias...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let baterias of ListaBaterias; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{baterias.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{baterias.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{baterias.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{baterias.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Teclados</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más teclados...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Teclados</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="teclados"><h5>Ver más teclados...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let teclados of ListaTeclados; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{teclados.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{teclados.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{teclados.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{teclados.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Micrófonos</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más micrófonos...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Micrófonos</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="microfonos"><h5>Ver más micrófonos...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let microfonos of ListaMicrofonos; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{microfonos.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{microfonos.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{microfonos.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{microfonos.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Equipo para DJ</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más equipo para dj...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Equipo para DJ</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="dj"><h5>Ver más teclados...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let dj of ListaDJ; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{dj.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{dj.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{dj.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{dj.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Vientos</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más instrumentos y accesorios de viento...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Vientos</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="vientos"><h5>Ver más instrumentos y accesorios de viento...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let vientos of ListaVientos; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{vientos.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{vientos.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{vientos.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{vientos.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Tradicionales</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más instrumentos y accesorios tradicionales...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Tradicional</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="tradicional"><h5>Ver más instrumentos y accesorios tradicionales...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let tradicional of ListaTradicional; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{tradicional.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{tradicional.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{tradicional.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{tradicional.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid w-75 mt-5 mb-5">
-        <div class="container-fluid w-100 d-flex flex-row justify-content-between">
-            <h3>Software</h3>
-            <a class="text-decoration-none link-dark" routerLink="guitarras"><h5>Ver más software...</h5></a>
-            <div>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-left fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-                <a class="mt-2 mb-2 ms-2 me-2">
-                    <i class="fa fa-angle-double-right fa-lg text-dark" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container-fluid mt-5 mb-5">
+        <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-between">
+            <h3 class="mb-5 mt-1 ms-5">Software</h3>
+            <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="software"><h5>Ver más software de producción...</h5></a>
         </div>
-        <div class="container-fluid w-100">
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="mb-4 w-100 d-flex">
+            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let software of ListaSoftware; let i = index" >
+                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{software.ImagenProducto}}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{software.NombreProducto}}</h5>
+                        <p class="card-text mt-4">{{software.DescripcionProducto}}</p>
+                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{software.NombreCategoria}}">Go somewhere</a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 </div> 

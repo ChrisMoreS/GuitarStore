@@ -23,73 +23,105 @@ export class TiendaProductosComponent implements OnInit {
   ListaTradicional: any[''];
   ListaSoftware: any[''];
 
+  
   constructor( 
     private ProductosSVC: ProductosService
-   ) { }
+    ) { }
+    
+    ngOnInit(): void {
+      this.verGuitarras();
+      this.verBajos();
+      this.verBaterias();
+      this.verTeclados();
+      this.verMicrofonos();
+      this.verDJ();
+      this.verVientos();
+      this.verTradicionales();
+      this.verSoftware();
+    }
 
-  ngOnInit(): void {
-    this.verGuitarras();
-    this.verBajos();
-    this.verBaterias();
-    this.verTeclados();
-    this.verMicrofonos();
-    this.verDJ();
-    this.verVientos();
-    this.verTradicionales();
-    this.verSoftware();
-  }
+    shuffleArray(array: any['']) {
+      var m = array.length, t, i;
+    
+      while (m) {
+        i = Math.floor(Math.random() * m--);
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+      }
+    
+      return array;
+    }
+  
   verGuitarras(){
     this.ProductosSVC.ObtenerProductoPorCategoria('guitarras').subscribe(res => {
       this.ListaGuitarras = res;
       console.log(this.ListaGuitarras);
-    })
+      this.shuffleArray(this.ListaGuitarras);
+    }) 
   }
+
   verBajos(){
     this.ProductosSVC.ObtenerProductoPorCategoria('bajos').subscribe(res => {
       this.ListaBajos = res;
       console.log(this.ListaBajos);
+      this.shuffleArray(this.ListaBajos);
     })
   }
+
   verTeclados(){
     this.ProductosSVC.ObtenerProductoPorCategoria('teclados').subscribe(res => {
       this.ListaTeclados = res;
       console.log(this.ListaTeclados);
+      this.shuffleArray(this.ListaTeclados);
     })
   }
+
   verMicrofonos(){
     this.ProductosSVC.ObtenerProductoPorCategoria('microfonos').subscribe(res => {
       this.ListaMicrofonos = res;
       console.log(this.ListaMicrofonos);
+      this.shuffleArray(this.ListaMicrofonos);
     })
   }
+
   verDJ(){
     this.ProductosSVC.ObtenerProductoPorCategoria('dj').subscribe(res => {
       this.ListaDJ = res;
       console.log(this.ListaDJ);
+      this.shuffleArray(this.ListaDJ);
     })
-  }  
+  }
+
   verVientos(){
     this.ProductosSVC.ObtenerProductoPorCategoria('vientos').subscribe(res => {
       this.ListaVientos = res;
       console.log(this.ListaVientos);
+      this.shuffleArray(this.ListaVientos);
     })
   }
+
   verBaterias(){
     this.ProductosSVC.ObtenerProductoPorCategoria('baterias').subscribe(res => {
       this.ListaBaterias = res;
       console.log(this.ListaBaterias);
+      this.shuffleArray(this.ListaBaterias);
     })
   }
+
   verTradicionales(){
     this.ProductosSVC.ObtenerProductoPorCategoria('tradicional').subscribe(res => {
       this.ListaTradicional = res;
       console.log(this.ListaTradicional);
+      this.shuffleArray(this.ListaTradicional);
     })
   }
+
   verSoftware(){
     this.ProductosSVC.ObtenerProductoPorCategoria('software').subscribe(res => {
       this.ListaSoftware = res;
       console.log(this.ListaSoftware);
+      this.shuffleArray(this.ListaSoftware);
     })
   }
 
