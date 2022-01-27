@@ -8,14 +8,14 @@
             <h3 class="mb-5 mt-1 ms-5">Guitarras</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="guitarras"><h5>Ver más guitarras...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let guitarras of ListaGuitarras; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{guitarras.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{guitarras.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{guitarras.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{guitarras.CategoriaProducto}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let guitarras of ListaGuitarras; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{guitarras.ImagenProducto}}">
+                    <div class="cuerpo-carta">
+                        <h5>{{guitarras.NombreProducto}}</h5>
+                        <p>{{guitarras.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{guitarras.CategoriaProducto}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -26,14 +26,14 @@
             <h3 class="mb-5 mt-1 ms-5">Bajos</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="bajos"><h5>Ver más bajos...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center"  *ngFor="let bajos of ListaBajos; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{bajos.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{bajos.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{bajos.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{bajos.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let bajos of ListaBajos; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{bajos.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{bajos.NombreProducto}}</h5>
+                        <p>{{bajos.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{bajos.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -44,14 +44,14 @@
             <h3 class="mb-5 mt-1 ms-5">Baterias</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="baterias"><h5>Ver más baterias...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let baterias of ListaBaterias; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{baterias.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{baterias.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{baterias.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{baterias.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let baterias of ListaBaterias; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{baterias.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{baterias.NombreProducto}}</h5>
+                        <p>{{baterias.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{baterias.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -62,14 +62,14 @@
             <h3 class="mb-5 mt-1 ms-5">Teclados</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="teclados"><h5>Ver más teclados...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let teclados of ListaTeclados; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{teclados.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{teclados.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{teclados.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{teclados.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let teclados of ListaTeclados; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{teclados.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{teclados.NombreProducto}}</h5>
+                        <p>{{teclados.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{teclados.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -80,14 +80,14 @@
             <h3 class="mb-5 mt-1 ms-5">Micrófonos</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="microfonos"><h5>Ver más micrófonos...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let microfonos of ListaMicrofonos; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{microfonos.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{microfonos.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{microfonos.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{microfonos.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let microfonos of ListaMicrofonos; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{microfonos.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{microfonos.NombreProducto}}</h5>
+                        <p>{{microfonos.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{microfonos.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -98,14 +98,14 @@
             <h3 class="mb-5 mt-1 ms-5">Equipo para DJ</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="dj"><h5>Ver más teclados...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let dj of ListaDJ; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{dj.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{dj.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{dj.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{dj.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let dj of ListaDJ; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{dj.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{dj.NombreProducto}}</h5>
+                        <p>{{dj.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{dj.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -116,14 +116,14 @@
             <h3 class="mb-5 mt-1 ms-5">Vientos</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="vientos"><h5>Ver más instrumentos y accesorios de viento...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let vientos of ListaVientos; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{vientos.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{vientos.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{vientos.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{vientos.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let vientos of ListaVientos; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{vientos.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{vientos.NombreProducto}}</h5>
+                        <p>{{vientos.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{vientos.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -134,14 +134,14 @@
             <h3 class="mb-5 mt-1 ms-5">Tradicional</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="tradicional"><h5>Ver más instrumentos y accesorios tradicionales...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let tradicional of ListaTradicional; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{tradicional.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{tradicional.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{tradicional.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{tradicional.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let tradicional of ListaTradicional; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{tradicional.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{tradicional.NombreProducto}}</h5>
+                        <p>{{tradicional.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{tradicional.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -152,14 +152,14 @@
             <h3 class="mb-5 mt-1 ms-5">Software</h3>
             <a class="text-decoration-none link-dark text-center mb-5 mt-1 me-5" routerLink="software"><h5>Ver más software de producción...</h5></a>
         </div>
-        <div class="mb-4 w-100 d-flex">
-            <div class="d-flex flex-row align-items-center justify-content-center" *ngFor="let software of ListaSoftware; let i = index" >
-                <div class="card ms-4 me-4" style="width: 12.5rem;" *ngIf="i < 6">
-                    <img src="/assets/img/products/{{software.ImagenProducto}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{software.NombreProducto}}</h5>
-                        <p class="card-text mt-4">{{software.DescripcionProducto}}</p>
-                        <a class="btn btn-primary align-self-start ms-2 me-2 mb-2 align-bottom" routerLink="{{software.NombreCategoria}}">Go somewhere</a>
+        <div class="contenedor">
+            <div class="repiteproducto" *ngFor="let software of ListaSoftware; let i = index" >
+                <div class="carta" *ngIf="i < 6">
+                    <img src="/assets/img/products/{{software.ImagenProducto}}">
+                    <div class="cuerpo-carta" >
+                        <h5>{{software.NombreProducto}}</h5>
+                        <p>{{software.DescripcionProducto}}</p>
+                        <button class="boton btn btn-outline-dark" routerLink="{{software.NombreCategoria}}">Comprar</button>
                     </div>
                 </div>
             </div>
