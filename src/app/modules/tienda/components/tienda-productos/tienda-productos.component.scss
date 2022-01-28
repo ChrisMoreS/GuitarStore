@@ -1,3 +1,5 @@
+$amarillo:  #fec503 ;
+
 .contenedor{
     margin-left: 50px;
     margin-right: 50px;
@@ -39,7 +41,7 @@
                 text-align: center;
             }
             .boton:hover{
-                box-shadow: 2.5px 2.5px 0px #fec503 !important;
+                box-shadow: 2.5px 2.5px 0px $amarillo !important;
             }
         }
     }

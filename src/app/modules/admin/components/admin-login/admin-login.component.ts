@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComprobarAdminService } from 'src/app/services/comprobaradmin.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() { }
+  adminlogged!: boolean;
+
+  constructor(
+    private ComprobarSVC: ComprobarAdminService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  comprobaradmin () {
+    
   }
 
 }
