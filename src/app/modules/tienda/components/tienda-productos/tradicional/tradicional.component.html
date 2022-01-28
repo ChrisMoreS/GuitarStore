@@ -1,1 +1,17 @@
-<p>tradicional works!</p>
+<div class="container-fuild mt-5 mb-5">
+    <div class="container-fluid w-100 me-5 mb-3 d-flex flex-row justify-content-center">
+        <h1 class="mb-5 mt-1 ms-5">Instrumentos Tradicionales</h1>
+    </div>
+    <div class="contenedor">
+        <div class="repiteproducto" *ngFor="let tradicion of Tradicional; let i = index" >
+            <div class="carta">
+                <img src="/assets/img/products/{{tradicion.ImagenProducto}}">
+                <div class="cuerpo-carta">
+                    <h5>{{tradicion.NombreProducto}}</h5>
+                    <p>{{tradicion.DescripcionProducto}}</p>
+                    <button class="boton btn btn-outline-dark" routerLink="{{tradicion.CategoriaProducto}}">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

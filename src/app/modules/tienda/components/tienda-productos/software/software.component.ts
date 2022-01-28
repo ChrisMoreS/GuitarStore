@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-software',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoftwareComponent implements OnInit {
 
-  constructor() { }
+  Software: any[''];
+
+  constructor(
+    private ProductosSVC: ProductosService
+  ) { }
 
   ngOnInit(): void {
+    this.VerSoftware();
+  }
+
+  VerSoftware(){
+    this.ProductosSVC.ObtenerProductoPorCategoria('software').subscribe(res=>{
+      this.Software = res;
+    });
   }
 
 }

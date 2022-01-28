@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-baterias',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BateriasComponent implements OnInit {
 
-  constructor() { }
+  Baterias: any[''];
+
+  constructor(
+    private ProductosSVC: ProductosService
+  ) { }
 
   ngOnInit(): void {
+    this.VerBaterias();
+  }
+
+  VerBaterias(){
+    this.ProductosSVC.ObtenerProductoPorCategoria('baterias').subscribe(res=>{
+      this.Baterias = res;
+    });
   }
 
 }
