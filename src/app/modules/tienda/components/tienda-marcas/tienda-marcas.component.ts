@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarcasService } from 'src/app/services/marcas.service';
 
 @Component({
   selector: 'app-tienda-marcas',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TiendaMarcasComponent implements OnInit {
 
-  constructor() { }
+  Marcas: any[''];
+
+  constructor(
+    private MarcasSVC: MarcasService
+  ) { }
 
   ngOnInit(): void {
+    this.VerGuitarras();
   }
+
+  VerGuitarras(){
+    this.MarcasSVC.ObtenerMarcas().subscribe(res=>{
+      this.Marcas = res;
+    });
+  }
+
 
 }
