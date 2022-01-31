@@ -8,17 +8,12 @@ import { ComprobarAdminService } from 'src/app/services/comprobaradmin.service';
 })
 export class AdminLoginComponent implements OnInit {
 
-  adminlogged!: boolean;
 
   constructor(
     private ComprobarSVC: ComprobarAdminService
   ) { }
 
   ngOnInit(): void {
-  }
-
-  comprobaradmin () {
-    
   }
 
 }

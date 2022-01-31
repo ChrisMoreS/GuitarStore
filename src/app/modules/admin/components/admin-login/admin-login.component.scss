@@ -1,0 +1,121 @@
+
+.Contenedor{
+    
+    background: linear-gradient(
+        -45deg,
+        #d98b19,
+        #d98b19,
+        #e79f31, 
+        #e79f31, 
+        #fdb73e, 
+        #fdb73e, 
+        #fed48b, 
+        #fed48b, 
+        #feedcf, 
+        #feedcf, 
+        #feedcf, 
+        #feedcf, 
+        #fed48b, 
+        #fed48b, 
+        #fdb73e, 
+        #fdb73e, 
+        #e79f31, 
+        #e79f31, 
+        #d98b19,
+        #d98b19);
+    background-size: 1200% 1200%;
+
+    animation: GradientAnimation 30s ease infinite;
+    
+    @keyframes GradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .Contenido{
+        background: transparent;
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+
+        .Contenido1{
+            width: 40%;
+            height: 80vh;
+            background-color: rgba(white, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1{
+                text-align: center;
+                margin-top: 15%;
+                color: black;
+                margin: 2em 0 1.5em 0;
+            }
+
+            form{
+                width: 80%;
+                margin: 1em 0 1em 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                label{
+                    width: 15em;
+                    color: black;
+                    font-size: 20px;
+                }
+
+                input{
+                    width: 15   em;
+                    background: transparent;
+                    color: black;
+                    font-size: 20px;
+                    outline: solid 1px black;
+                    border: solid 1px black;
+                }
+            }
+        }
+    
+        .Contenido2{
+            width: 60%;
+            height: 80vh;
+            background-color: rgba(black,0.85);
+
+            .logo{
+                margin-top: 40px;
+                width: 100%;
+                height: 60vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    width: 75%;
+                }
+
+            }
+
+            .info{
+                width: 100%;
+                text-align: center;
+                color: white;
+                margin-top: -11.5em;
+            }
+
+        }
+    }
+
+
+
+}
