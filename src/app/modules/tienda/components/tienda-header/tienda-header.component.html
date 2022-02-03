@@ -17,96 +17,13 @@
               <a class="nav-link text-dark" routerLink="contacto">Contacto</a>
             </li>
             <li class="nav-item">
-             <!-- <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"><img src="../assets/IMAGENES/ICONOS/USERBLACK.svg" href="#" width="32"></a>
-             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Usuario</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                
-              </div>
-            </div> -->
-  
-              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
-              <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel">Entrar</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div ngNativeValidate class="modal-body d-flex align-items-center">
-                      <form class="col g-3 d-flex flex-column">
-                        <div class="col-auto mt-3 ms-5 me-5">
-                          <label for="inputEmail2" class="form-label">Email</label>
-                          <input type="text" class="form-control bg-light w-80" id="inputEmail2" placeholder="email@example.com" required>
-                        </div>
-                        <div class="col-auto mt-3 ms-5 me-5">
-                          <label for="inputPassword2" class="form-label">Password</label>
-                          <input type="password" class="form-control bg-light" id="inputPassword2" placeholder="Password" required>
-                        </div>
-                        <div class="col-auto mt-4 ms-auto me-auto">
-                          <button type="submit" class="btn btn-outline-dark mb-3">Entrar</button>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Registrarse</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel2">Registrarse</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center justify-content-center">
-                      <form ngNativeValidate class="row g-3 w-80">
-                        <div class="row g-3">
-                          <div class="col form-floating">
-                            <input type="text" class="form-control bg-light" placeholder="Christian Manuel" id="inputFirstName4" aria-label="First name" required>
-                            <label for="inputFirstName4" class="form-label">Nombre</label>
-                          </div>
-                          <div class="col form-floating">
-                            <input type="text" class="form-control bg-light" placeholder="Moreno Saldaña" aria-label="Last name" required>
-                            <label for="inputLastName4" class="form-label">Apellidos</label>
-                          </div>
-                          <div class="col form-floating">
-                            <input type="text" class="form-control bg-light" placeholder="More" aria-label="User" required>
-                            <label for="inputUser4" class="form-label">Usuario</label>
-                          </div>
-                        </div>
-                        <div class="row g-3">
-                          <div class="col form-floating">
-                            <input type="email" class="form-control bg-light" placeholder="ChristianMoreno@gmail.com" aria-label="Email" required>
-                            <label for="inputEmail4" class="form-label">Email</label>
-                          </div>
-                        </div>
-                        <div class="row g-3">
-                          <div class="col form-floating">
-                            <input type="password" class="form-control bg-light" placeholder="Contraseña" aria-label="Password" required>
-                            <label for="inputPassword4" class="form-label">Contraseña</label>
-                          </div>
-                          <div class="col form-floating">
-                            <input type="Password" class="form-control bg-light" placeholder="Repita Contraseña" aria-label="Password" required>
-                            <label for="inputPassword4" class="form-label">Repita Contraseña</label>
-                          </div>
-                        </div>
-                        <div class="col-auto mt-4 ms-auto me-auto">
-                          <button type="submit" class="btn btn-outline-dark mb-3">Registrarme</button>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Entrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div *ngIf="user === true; then Logged; else NotLogged"></div>
+              <ng-template #Logged>
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button">Bienvenido {{UserName}} <img src="/assets/img/icons/USERBLACK.svg" width="32"></a>
+              </ng-template>
+              <ng-template #NotLogged>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+              </ng-template>
             </li>
           </div>
         </ul>

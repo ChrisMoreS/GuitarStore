@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
@@ -10,6 +10,8 @@ import { AdminTrabajadoresComponent } from './components/admindashboard/admin-tr
 import { AdminheaderComponent } from './components/adminheader/adminheader.component';
 import { AdminfooterComponent } from './components/adminfooter/adminfooter.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthGuard } from 'src/app/auth/auth.guard';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: AdmindashboardComponent, children:[
+      {path: '', component: AdmindashboardComponent, canActivate: [AuthGuard], children:[
         {path: 'productos', component: AdminProductosComponent},
         {path: 'clientes', component: AdminClientesComponent},
         {path: 'trabajadores', component: AdminTrabajadoresComponent}
@@ -33,6 +35,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
       {path: 'login', component: AdminLoginComponent}
     ]),
     ReactiveFormsModule,
-  ]
+    FormsModule
+  ],
+  providers: [CookieService],
 })
 export class AdminModule { }

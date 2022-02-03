@@ -2,14 +2,14 @@
     <div class="Contenido">
         <div class="Contenido1">
             <h1>INICIAR SESIÓN</h1>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="ComprobarLoginAdmin()" method="post">
                 <div class="mb-3">
                     <label for="Usuario" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" id="Usuario" placeholder="Usuario">
+                    <input type="text" formControlName="user"  class="form-control" id="Usuario" placeholder="Usuario">
                   </div>
                   <div class="mb-3">
                     <label for="contrasena" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+                    <input type="password" formControlName="contrasena" class="form-control" id="contrasena" placeholder="Contraseña">
                   </div>
                   <div class="mb-3">
                     <button type="submit" class="btn btn-dark">Enviar</button>

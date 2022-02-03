@@ -18,6 +18,7 @@ import { TradicionalComponent } from './components/tienda-productos/tradicional/
 import { VientoComponent } from './components/tienda-productos/viento/viento.component';
 import { SoftwareComponent } from './components/tienda-productos/software/software.component';
 import { TiendaMarcasComponent } from './components/tienda-marcas/tienda-marcas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -61,7 +62,9 @@ import { TiendaMarcasComponent } from './components/tienda-marcas/tienda-marcas.
           {path: 'productos/software', component: SoftwareComponent},
         {path: '', redirectTo: 'inicio', pathMatch: 'full'}
       ]}
-    ])
+    ]),
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class TiendaModule { }

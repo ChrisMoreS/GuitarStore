@@ -1,31 +1,38 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Clientes } from '../interfaces/clientes-interface';
+import { LoginAdmin } from '../interfaces/LoginAdmin-interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient, private cookies: CookieService) {}
 
   ObtenerClientes(){
-    return this.http.get<any>(`http:/localhost/ConexionesGuitarStore/Clientes.php`)
+    return this.http.get<any>(`http:/localhost/ConexionesGuitarStore/Usuarios.php`)
   }
 
-  ObtenerUnClientes(idCliente: String){
-    return this.http.get<any>(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`)
+  ObtenerUnClientes(idUsuario: String){
+    return this.http.get<any>(`http://localhost/ConexionGuitarStore/Usuarios.php?isUsuario=${idUsuario}`)
   }
 
   InsertarUnCliente(datosCliente:Clientes){
-    return this.http.post(`http://localhost/ConexionGuitarStore/Clientes.php`,datosCliente)
+    return this.http.post(`http://localhost/ConexionGuitarStore/Usuarios.php`,datosCliente)
   }
 
-  EditarUnCliente(idCliente: String, datosCliente:Clientes){
-    return this.http.put(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`,datosCliente)
+  EditarUnCliente(idUsuario: String, datosCliente:Clientes){
+    return this.http.put(`http://localhost/ConexionGuitarStore/Usuarios.php?idUsuario=${idUsuario}`,datosCliente)
   }
 
-  BorrarUnCliente(idCliente: String){
-    return this.http.delete(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`)
+  BorrarUnCliente(idUsuario: String){
+    return this.http.delete(`http://localhost/ConexionGuitarStore/Usuarios.php?idUsuario=${idUsuario}`)
   }
+  
+  comprobarLogin (datosForm: LoginAdmin) {
+    return this.http.post(`http://localhost/ConexionGuitarStore/Login.php?user=${datosForm.user}&contrasena=${datosForm.contrasena}`,datosForm);
+  }
+
 }
