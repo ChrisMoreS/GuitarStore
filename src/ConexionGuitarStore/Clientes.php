@@ -2,8 +2,6 @@
 
     include 'conexion.php';
 
-    a
-
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Rquest-With, Content-type, Accept");
     header("Content-Type: Aplication/Json; charset=utf8");
