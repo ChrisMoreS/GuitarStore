@@ -54,6 +54,8 @@ export class AdminLoginComponent implements OnInit {
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
             window.location.href = 'admin';
+            localStorage.setItem('usuario', this.usu[0]['Usuario']);
+            localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
             this.Cookie.set('usuario', this.usu[0]['Usuario'])
             this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario']);
           }

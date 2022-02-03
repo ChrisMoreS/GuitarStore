@@ -12,8 +12,7 @@ import Swal from 'sweetalert2';
 export class TiendaHeaderComponent implements OnInit {
 
   user!: boolean;
-  UserName!: string;
-  UserPorfile!: File;
+  UserName!: any;
   constructor(private Cookie: CookieService) { }
 
   ngOnInit(): void {
@@ -21,12 +20,9 @@ export class TiendaHeaderComponent implements OnInit {
   }
 
   ComprobarUsuarioIniciado(){
-    if (this.Cookie.check('usuario')) {
+    if (localStorage.getItem('usuario')) {
       this.user = true;
-      this.UserName = this.Cookie.get('usuario');
+      this.UserName = localStorage.getItem('usuario');
     }
   }
-
-  
-
 }

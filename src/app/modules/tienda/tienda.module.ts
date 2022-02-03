@@ -19,6 +19,7 @@ import { VientoComponent } from './components/tienda-productos/viento/viento.com
 import { SoftwareComponent } from './components/tienda-productos/software/software.component';
 import { TiendaMarcasComponent } from './components/tienda-marcas/tienda-marcas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -65,6 +66,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ]),
     ReactiveFormsModule,
     FormsModule
-  ]
+  ],
+  providers: [CookieService],
 })
 export class TiendaModule { }
