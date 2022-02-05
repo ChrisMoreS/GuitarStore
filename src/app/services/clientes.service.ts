@@ -12,23 +12,23 @@ export class ClientesService {
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   ObtenerClientes(){
-    return this.http.get<any>(`http:/localhost/ConexionesGuitarStore/Usuarios.php`)
+    return this.http.get<any>(`http:/localhost/ConexionesGuitarStore/Clientes.php`)
   }
 
-  ObtenerUnClientes(idUsuario: String){
-    return this.http.get<any>(`http://localhost/ConexionGuitarStore/Usuarios.php?isUsuario=${idUsuario}`)
+  ObtenerUnClientes(idCliente: String){
+    return this.http.get<any>(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`)
   }
 
   InsertarUnCliente(datosCliente:Clientes){
-    return this.http.post(`http://localhost/ConexionGuitarStore/Usuarios.php`,datosCliente)
+    return this.http.post(`http://localhost/ConexionGuitarStore/Clientes.php`,datosCliente)
   }
 
-  EditarUnCliente(idUsuario: String, datosCliente:Clientes){
-    return this.http.put(`http://localhost/ConexionGuitarStore/Usuarios.php?idUsuario=${idUsuario}`,datosCliente)
+  EditarUnCliente(idCliente: String, datosCliente:Clientes){
+    return this.http.put(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`,datosCliente)
   }
 
-  BorrarUnCliente(idUsuario: String){
-    return this.http.delete(`http://localhost/ConexionGuitarStore/Usuarios.php?idUsuario=${idUsuario}`)
+  BorrarUnCliente(idCliente: String){
+    return this.http.delete(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`)
   }
   
   comprobarLogin (datosForm: LoginAdmin) {

@@ -2,7 +2,7 @@
     <div class="Contenido">
         <div class="Contenido1">
             <h1>INICIAR SESIÓN</h1>
-            <form [formGroup]="form" (ngSubmit)="ComprobarLoginAdmin()" method="post">
+            <form [formGroup]="form" (ngSubmit)="ComprobarLoginUser()" method="post">
                 <div class="mb-3">
                     <label for="Usuario" class="form-label">Usuario</label>
                     <input type="text" formControlName="user"  class="form-control" id="Usuario" placeholder="Usuario">
@@ -15,13 +15,9 @@
                     <button type="submit" class="btn btn-dark">Enviar</button>
                   </div>
             </form>
-        </div>
-        <div class="Contenido2">
-            <div class="logo">
-                <a routerLink=""><img src="/assets/img/logos/LOGOBLANCO.svg"></a>
-            </div>
-            <div class="info">
-                <h3>Aquí solo iniciarán sesión los administradores</h3>
+            <div class="sincuenta d-flex flex-column justify-content-center align-items-center">
+              <a class="link-dark text-decoration-none" routerLink="../register">¿Problemas para iniciar sesión?</a>
+              <a class="link-dark text-decoration-none" routerLink="../register">¿Aún no tienes cuenta?</a>
             </div>
         </div>
     </div>

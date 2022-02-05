@@ -1,3 +1,9 @@
-<app-adminheader></app-adminheader>
-<router-outlet></router-outlet>
-<app-adminfooter></app-adminfooter>
+<ng-template #LoggedIn>
+    <app-adminheader></app-adminheader>
+    <router-outlet></router-outlet>
+    <app-adminfooter></app-adminfooter>
+</ng-template>
+<ng-template #NotLogged>
+    <div class="container-fluid bg-dark vh-100 vw-100"></div>
+</ng-template>
+<div *ngIf="AdminLogged == true, then LoggedIn, else NotLogged"></div>

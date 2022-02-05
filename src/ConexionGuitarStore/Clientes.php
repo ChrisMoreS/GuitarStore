@@ -52,21 +52,64 @@
             move_uploaded_file($temporal, $rutadestino);
         }
 
+        if (isset($params->Usuario) && isset($params->EmailUsuario)) {
+            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE Usuario = :UsuarioCliente AND EmailUsuario = :EmailUsuario');
+            $prevsql->bindValue(':UsuarioCliente', $params->Usuario);
+            $prevsql->bindValue(':EmailUsuario', $params->EmailUsuario);
+            $prevsql->execute();
 
-        $sql = "INSERT INTO Usuarios(NombreUsuario, ApellidosUsuario, EmailUsuario, Usuario, Contraseña, FotoPerfilUsuario) 
-        values (:NombreCliente, :ApellidosCliente, :EmailCliente, :UsuarioCliente, PASSWORD_HASH(:ContraseñaCliente, PASSWORD_DEFAULT), :FotoPerfilCliente)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':NombreCliente', $params->NombreCliente);
-        $stmt->bindValue(':ApellidosCliente', $params->ApellidosCliente);
-        $stmt->bindValue(':EmailCliente', $params->EmailCliente);
-        $stmt->bindValue(':UsuarioCliente', $params->UsuarioCliente);
-        $stmt->bindValue(':ContraseñaCliente', $params->ContraseñaCliente);
-        $stmt->bindValue(':FotoPerfilCliente', $ImagenPerfilNombre);
-        $stmt->execute();
-        header('HTML/1.1 200 OK');
-        echo json_encode('El registro se ha agregado.');
-        exit;
+            while ($user = $prevsql->fetch()) {
+                $usuario = $user['Usuario'];
+                $usuarioe = $user['EmailUsuario'];
+                if ($usuario == $params->Usuario && $usuarioe == $params->EmailUsuario) {
+                    echo json_encode('error usuario y email');
+                    exit;
+                }
+            }
+        }
+
+        if (isset($params->Usuario)) {
+            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE Usuario = :UsuarioCliente');
+            $prevsql->bindValue(':UsuarioCliente', $params->Usuario);
+            $prevsql->execute();
+
+            while ($user = $prevsql->fetch()) {
+                $usuario = $user['Usuario'];
+                if ($usuario == $params->Usuario) {
+                    echo json_encode('error usuario');
+                    exit;
+                }
+            }
+        }
+        
+        if (isset($params->EmailUsuario)) {
+            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE EmailUsuario = :EmailUsuario');
+            $prevsql->bindValue(':EmailUsuario', $params->EmailUsuario);
+            $prevsql->execute();
+
+            while ($user = $prevsql->fetch()) {
+                $usuario = $user['EmailUsuario'];
+                if ($usuario == $params->EmailUsuario) {
+                    echo json_encode('error email');
+                    exit;
+                }
+            }
+        }
+            $sql = "INSERT INTO Usuarios(NombreUsuario, ApellidosUsuario, EmailUsuario, Usuario, Contraseña) 
+            values (:NombreCliente, :ApellidosCliente, :EmailCliente, :UsuarioCliente, :ContrasenaCliente)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':NombreCliente', $params->NombreUsuario);
+            $stmt->bindValue(':ApellidosCliente', $params->ApellidosUsuario);
+            $stmt->bindValue(':EmailCliente', $params->EmailUsuario);
+            $stmt->bindValue(':UsuarioCliente', $params->Usuario);
+            $stmt->bindValue(':ContrasenaCliente', PASSWORD_HASH($params->ContrasenaUsuario, PASSWORD_DEFAULT));
+            // $stmt->bindValue(':FotoPerfilCliente', $ImagenPerfilNombre);
+            $stmt->execute();
+            header('HTML/1.1 200 OK');
+            echo json_encode('agregado');
+            exit;
     }
+    
 
     //Actualizar Clientes
 
@@ -107,11 +150,11 @@
         SET NombreUsuario=:NombreCliente, ApellidosUsuario=:ApellidosCliente, EmailUsuario=:EmailCliente, Usuario=:UsuarioCliente, Contraseña=PASSWORD_HASH(:ContraseñaCliente, PASSWORD_DEFAULT), FotoPerfilUsuario=:FotoPerfilCliente 
         WHERE IDUsuario=:idCliente";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':NombreCliente', $params->NombreCliente);
-        $stmt->bindValue(':ApellidosCliente', $params->ApellidosCliente);
-        $stmt->bindValue(':EmailCliente', $params->EmailCliente);
-        $stmt->bindValue(':UsuarioCliente', $params->UsuarioCliente);
-        $stmt->bindValue(':ContraseñaCliente', $params->ContraseñaCliente);
+        $stmt->bindValue(':NombreCliente', $params->NombreUsuario);
+        $stmt->bindValue(':ApellidosCliente', $params->ApellidosUsuario);
+        $stmt->bindValue(':EmailCliente', $params->EmailUsuario);
+        $stmt->bindValue(':UsuarioCliente', $params->UsuarioUsuario);
+        $stmt->bindValue(':ContraseñaCliente', $params->ContraseñaUsuario);
         $stmt->bindValue(':FotoPerfilCliente', $ImagenPerfilNombre);
         $stmt->bindValue(':idCliente', $_GET['idCliente']);
         $stmt->execute();

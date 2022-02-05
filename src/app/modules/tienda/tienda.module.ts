@@ -20,8 +20,15 @@ import { SoftwareComponent } from './components/tienda-productos/software/softwa
 import { TiendaMarcasComponent } from './components/tienda-marcas/tienda-marcas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-
-
+import { TiendaUsuariosComponent } from './components/tienda-usuarios/tienda-usuarios.component';
+import { AuthUserGuard } from 'src/app/auth/auth-user.guard';
+import { LoginUserComponent } from './components/tienda-usuarios/login-user/login-user.component'; 
+import { UserDashboardComponent } from './components/tienda-usuarios/user-dashboard/user-dashboard.component';
+import { RegisterUserComponent } from './components/tienda-usuarios/register-user/register-user.component';
+import { PedidosComponent } from './components/tienda-Usuarios/User-Dashboard/pedidos/pedidos.component';
+import { PerfilComponent } from './components/tienda-Usuarios/User-Dashboard/perfil/perfil.component';
+import { DevolverProductoComponent } from './components/tienda-Usuarios/User-Dashboard/devolver-producto/devolver-producto.component';
+import { EvaluarProductoComponent } from './components/tienda-Usuarios/User-Dashboard/evaluar-producto/evaluar-producto.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +48,15 @@ import { CookieService } from 'ngx-cookie-service';
     TradicionalComponent,
     VientoComponent,
     SoftwareComponent,
-    TiendaMarcasComponent
+    TiendaMarcasComponent,
+    TiendaUsuariosComponent,
+    LoginUserComponent,
+    UserDashboardComponent,
+    RegisterUserComponent,
+    PedidosComponent,
+    PerfilComponent,
+    DevolverProductoComponent,
+    EvaluarProductoComponent
   ],
   imports: [
     CommonModule,
@@ -61,6 +76,16 @@ import { CookieService } from 'ngx-cookie-service';
           {path: 'productos/vientos', component: VientoComponent},
           {path: 'productos/tradicional', component: TradicionalComponent},
           {path: 'productos/software', component: SoftwareComponent},
+        {path: 'user', component: TiendaUsuariosComponent, children: [
+          {path: '', component: UserDashboardComponent, canActivate: [AuthUserGuard], children:[
+            {path: 'perfil', component: PerfilComponent},
+            {path: 'pedidos', component: PedidosComponent},
+            {path: 'devolver', component: DevolverProductoComponent},
+            {path: 'evaluar', component: EvaluarProductoComponent}
+          ]},
+          {path: 'login', component: LoginUserComponent},
+          {path: 'register', component: RegisterUserComponent}
+        ]},
         {path: '', redirectTo: 'inicio', pathMatch: 'full'}
       ]}
     ]),

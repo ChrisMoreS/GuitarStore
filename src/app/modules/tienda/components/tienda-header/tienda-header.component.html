@@ -19,10 +19,32 @@
             <li class="nav-item">
               <div *ngIf="user == true; then Logged; else NotLogged"></div>
               <ng-template #Logged>
-                <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button">Bienvenido {{UserName}} <img src="/assets/img/icons/USERBLACK.svg" width="32"></a>
+                <a class="abrircanvas nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><span>Bienvenido {{UserName}} </span>&nbsp;<img src="/assets/img/icons/USERBLACK.svg" width="32"></a>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header mt-5">
+                      <h4 id="offcanvasRightLabel ">Centro de Clientes</h4>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="ms-5" *ngFor="let usuarios of usuario">
+                      <p>{{usuarios.NombreUsuario}} {{usuarios.ApellidosUsuario}}
+                      <br>
+                        {{usuarios.EmailUsuario}}
+                      <br>
+                        Número de Cliente: {{usuarios.IDUsuario}}</p>
+                    </div>
+                    <div class="offcanvas-body d-flex flex-column ">
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" onclick="window.location.href = 'user'">Vista General</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5">Ver Pedidos</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5">Ver Perfil</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5">Devolver un Producto</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5">Evaluar un producto</a>
+                    </div>
+                    <hr style="width: 90%; margin: auto;">
+                    <a class="link-dark text-decoration-none fs-5 mt-2 mx-auto" style="margin-bottom: 4em;" (click)="cerrarSesion()" >Salir</a>
+                  </div>
               </ng-template>
               <ng-template #NotLogged>
-                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" role="button"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+                <a class="nav-link" routerLink="user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
               </ng-template>
             </li>
           </div>

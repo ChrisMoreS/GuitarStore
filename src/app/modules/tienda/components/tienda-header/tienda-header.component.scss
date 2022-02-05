@@ -22,6 +22,13 @@ header{
                 a{
                   color: black !important;
                 }
+                .abrircanvas{
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: space-around;
+                }
               }
             }
         }
@@ -30,6 +37,7 @@ header{
 
 a {
     color: $link-light-grey;
+    cursor:pointer;
   }
   a:hover {
     color: black;

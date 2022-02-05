@@ -11,9 +11,11 @@ import Swal from 'sweetalert2';
 })
 export class TiendaHeaderComponent implements OnInit {
 
-  user!: boolean;
-  UserName!: any;
-  constructor(private Cookie: CookieService) { }
+  user: boolean = false;
+  id: any;
+  usuario: any;
+  UserName!: any; 
+  constructor(private Cookie: CookieService, private ClienteSVC: ClientesService) { }
 
   ngOnInit(): void {
     this.ComprobarUsuarioIniciado();
@@ -23,6 +25,17 @@ export class TiendaHeaderComponent implements OnInit {
     if (localStorage.getItem('usuario')) {
       this.user = true;
       this.UserName = localStorage.getItem('usuario');
+      this.id = localStorage.getItem('idUsuario');
+      this.ClienteSVC.ObtenerUnClientes(this.id).subscribe(
+        res => {this.usuario = res;}
+      );
     }
   }
+
+  cerrarSesion(){
+    localStorage.clear();
+    this.Cookie.deleteAll('');
+    window.location.reload();
+  }
+
 }

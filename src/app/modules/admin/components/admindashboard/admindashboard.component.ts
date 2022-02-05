@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-admindashboard',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmindashboardComponent implements OnInit {
 
-  constructor() { }
+  AdminLogged!: boolean;
+
+  constructor(
+    private Cookies: CookieService
+  ) { }
 
   ngOnInit(): void {
+    this.comprobarAdmin();
+   }
+
+   comprobarAdmin(){
+     if (this.Cookies.get('categoria') == 'admin' ) {
+       this.AdminLogged = true;
+      }
+      if (!localStorage.getItem('usuario')) {
+        this.Cookies.deleteAll('/admin');
+        localStorage.clear();
+        window.location.href = 'admin/login';
+    }
   }
 
 }

@@ -1,0 +1,39 @@
+<div class="Contenedor">
+    <div class="Contenido">
+        <div class="Contenido1">
+            <h1>REGISTRARSE</h1>
+            <form ngNativeValidate [formGroup]="form" (ngSubmit)="RegistrarUsuario()" method="post">
+                <div class="mb-3">
+                    <label for="Usuario" class="form-label">Nombre</label>
+                    <input type="text" formControlName="NombreUsuario"  class="form-control" id="Nombre" placeholder="Christian" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Usuario" class="form-label">Apellidos</label>
+                    <input type="text" formControlName="ApellidosUsuario"  class="form-control" id="Apellidos" placeholder="Moreno" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Usuario" class="form-label">Usuario</label>
+                    <input type="text" formControlName="Usuario"  class="form-control" id="Usuario" placeholder="More" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Usuario" class="form-label">Email</label>
+                    <input type="email" formControlName="EmailUsuario"  class="form-control" id="Email" placeholder="example@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" formControlName="ContrasenaUsuario" class="form-control" id="contrasena" placeholder="Contraseña" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">Repita su Contraseña</label>
+                    <input type="password" formControlName="ContrasenaRUsuario" class="form-control" id="contrasena2" placeholder="Contraseñar" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark">Enviar</button>
+                </div>
+            </form>
+            <div class="sincuenta d-flex flex-column justify-content-center align-items-center">
+              <a class="link-dark text-decoration-none" routerLink="../Login">¿tienes una cuenta?</a>
+            </div>
+        </div>
+    </div>
+</div>
