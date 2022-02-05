@@ -25,10 +25,11 @@ import { AuthUserGuard } from 'src/app/auth/auth-user.guard';
 import { LoginUserComponent } from './components/tienda-usuarios/login-user/login-user.component'; 
 import { UserDashboardComponent } from './components/tienda-usuarios/user-dashboard/user-dashboard.component';
 import { RegisterUserComponent } from './components/tienda-usuarios/register-user/register-user.component';
-import { PedidosComponent } from './components/tienda-Usuarios/User-Dashboard/pedidos/pedidos.component';
-import { PerfilComponent } from './components/tienda-Usuarios/User-Dashboard/perfil/perfil.component';
-import { DevolverProductoComponent } from './components/tienda-Usuarios/User-Dashboard/devolver-producto/devolver-producto.component';
-import { EvaluarProductoComponent } from './components/tienda-Usuarios/User-Dashboard/evaluar-producto/evaluar-producto.component';
+import { PedidosComponent } from './components/tienda-usuarios/user-dashboard/pedidos/pedidos.component';
+import { DevolverProductoComponent } from './components/tienda-usuarios/user-dashboard/devolver-producto/devolver-producto.component';
+import { PerfilComponent } from './components/tienda-usuarios/user-dashboard/perfil/perfil.component';
+import { EvaluarProductoComponent } from './components/tienda-usuarios/user-dashboard/evaluar-producto/evaluar-producto.component';
+
 
 @NgModule({
   declarations: [
