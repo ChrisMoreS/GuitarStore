@@ -35,10 +35,11 @@ export class LoginUserComponent implements OnInit {
       if (this.usu[0]['CategoriaUsuario']) {
         window.location.href = '';
         localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
-        localStorage.setItem('usuario', this.usu[0]['Usuario']);
+        localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
         localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
-        this.Cookie.set('usuario', this.usu[0]['Usuario'])
+        this.Cookie.set('usuario', this.usu[0]['UsuarioUsuario'])
         this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario']);
+        
       }
 
     }, err => {

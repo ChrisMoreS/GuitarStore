@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-tienda-usuarios',
@@ -8,16 +9,24 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class TiendaUsuariosComponent implements OnInit {
 
-  constructor(private Cookies: CookieService) { }
+  initiated!: boolean;
+  id: any;
+  usuario: any;
+  constructor(private Cookie: CookieService, private ClienteSVC: ClientesService) { }
 
   ngOnInit(): void {
-    this.comprobarUsuarioIniciado();
+    this.ComprobarUsuarioIniciado();
   }
 
-  comprobarUsuarioIniciado(){
-    if (!localStorage.getItem('usuario')) {
-      this.Cookies.deleteAll();
-      localStorage.clear();
+  ComprobarUsuarioIniciado(){
+    if (localStorage.getItem('usuario')) {
+      this.id = localStorage.getItem('idUsuario');
+      this.ClienteSVC.ObtenerUnClientes(this.id).subscribe(
+        res => {
+          this.usuario = res;
+          this.initiated = true;
+        }
+      )
     }
   }
 

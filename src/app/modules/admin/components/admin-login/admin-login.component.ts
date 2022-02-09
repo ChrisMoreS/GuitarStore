@@ -55,10 +55,10 @@ export class AdminLoginComponent implements OnInit {
           if (result.isConfirmed || result.dismiss) {
             window.location.href = 'admin';
             localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
-            localStorage.setItem('usuario', this.usu[0]['Usuario']);
+            localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
             localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
             localStorage.setItem('Categoria', this.usu[0]['CategoriaUsuario']);
-            this.Cookie.set('usuario', this.usu[0]['Usuario'])
+            this.Cookie.set('usuario', this.usu[0]['UsuarioUsuario'])
             this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario']);
           }
         });

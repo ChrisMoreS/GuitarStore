@@ -39,14 +39,14 @@
                               UsuarioUsuario VARCHAR(255) DEFAULT NULL,
                               ContraseñaUsuario VARCHAR(255) DEFAULT NULL,
                               FotoPerfilUsuario VARCHAR(255) DEFAULT NULL,
-                              CategoriaUsuario
+                              CategoriaUsuario VARCHAR(255) DEFAULT 'registered'
                           );
                           
                           CREATE TABLE Sesion_Compra (
                               IDSesion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
                               IDUsuario INT NOT NULL,
-                              Total DECIMAL(30,4) DEFAULT NULL,
-                              FOREIGN KEY (IDUsuario) REFERENCES Usuarios(IDUsuario)
+                              FOREIGN KEY (IDUsuario) REFERENCES Usuarios(IDUsuario) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );
                           
                           CREATE TABLE Marca (
@@ -62,8 +62,9 @@
                           CREATE TABLE CategoriaMarca(
                               IDMarca INT DEFAULT NULL,
                               IDCategoria INT DEFAULT NULL,
-                              FOREIGN KEY (IDMarca) REFERENCES Marca(IDMarca),
-                              FOREIGN KEY (IDCategoria) REFERENCES Categoria(IDCategoria)
+                              FOREIGN KEY (IDMarca) REFERENCES Marca(IDMarca) ON UPDATE CASCADE ON DELETE CASCADE,
+                              FOREIGN KEY (IDCategoria) REFERENCES Categoria(IDCategoria) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );
                           
                           CREATE TABLE Productos(
@@ -81,17 +82,18 @@
                               ImagenProducto VARCHAR(255) DEFAULT NULL,
                               ExistenciasProducto INT DEFAULT NULL,
                               ActivadoProducto tinyint(1) DEFAULT NULL,
-                              FOREIGN KEY (IDMarca) REFERENCES Marca(IDMarca),
-                              FOREIGN KEY (IDCategoria) REFERENCES Categoria(IDCategoria)
+                              FOREIGN KEY (IDMarca) REFERENCES Marca(IDMarca) ON UPDATE CASCADE ON DELETE CASCADE,
+                              FOREIGN KEY (IDCategoria) REFERENCES Categoria(IDCategoria) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );
                           
                           CREATE TABLE Carrito (
-                              IDCarrito INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
                               IDSesion INT NOT NULL,
                               IDProducto INT NOT NULL,
                               CantidadCarrito INT DEFAULT NULL,
-                              FOREIGN KEY (IDSesion) REFERENCES Sesion_Compra(IDSesion),
-                              FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto)
+                              FOREIGN KEY (IDSesion) REFERENCES Sesion_Compra(IDSesion) ON UPDATE CASCADE ON DELETE CASCADE,
+                              FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );
                           
                           CREATE TABLE Pago (
@@ -104,8 +106,9 @@
                               IDUsuario INT NOT NULL,
                               TotalCompra DECIMAL(30,4) DEFAULT NULL,
                               IDPago INT NOT NULL,
-                              FOREIGN KEY (IDUsuario) REFERENCES Usuarios(IDUsuario),
-                              FOREIGN KEY (IDPago) REFERENCES Pago(IDPago)
+                              FOREIGN KEY (IDUsuario) REFERENCES Usuarios(IDUsuario) ON UPDATE CASCADE ON DELETE CASCADE,
+                              FOREIGN KEY (IDPago) REFERENCES Pago(IDPago) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );
                           
                           CREATE TABLE ItemsCompra(
@@ -113,8 +116,9 @@
                               IDCompra INT NOT NULL,
                               IDProducto INT NOT NULL,
                               Cantidad INT DEFAULT NULL,
-                              FOREIGN KEY (IDCompra) REFERENCES Compra_Detalles(IDCompra),
-                              FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto)
+                              FOREIGN KEY (IDCompra) REFERENCES Compra_Detalles(IDCompra) ON UPDATE CASCADE ON DELETE CASCADE,
+                              FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto) ON UPDATE CASCADE ON DELETE CASCADE
+                              
                           );"
                         );
     } catch (PDOException $e) {
@@ -127,7 +131,7 @@
                           INSERT INTO Marca(NombreMarca) VALUES ('Paiste');
                           INSERT INTO Marca(NombreMarca) VALUES ('Remo');
                           INSERT INTO Marca(NombreMarca) VALUES ('Shure');
-                          INSERT INTO Marca(NombreMarca) VALUES ('Rhode');
+                          INSERT INTO Marca(NombreMarca) VALUES ('Rode');
                           INSERT INTO Marca(NombreMarca) VALUES ('Roland');
                           INSERT INTO Marca(NombreMarca) VALUES ('Yamaha');
                           INSERT INTO Marca(NombreMarca) VALUES ('NativeInstruments');
@@ -160,7 +164,7 @@
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Paiste'), (select IDCategoria from categoria where NombreCategoria like 'Baterias'));
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Remo'), (select IDCategoria from categoria where NombreCategoria like 'Baterias'));
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Shure'), (select IDCategoria from categoria where NombreCategoria like 'Microfonos'));
-                          INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Rhode'), (select IDCategoria from categoria where NombreCategoria like 'Microfonos'));
+                          INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Rode'), (select IDCategoria from categoria where NombreCategoria like 'Microfonos'));
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Roland'), (select IDCategoria from categoria where NombreCategoria like 'Teclados'));
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'Yamaha'), (select IDCategoria from categoria where NombreCategoria like 'Teclados'));
                           INSERT INTO categoriamarca VALUES ((select IDMarca from Marca where NombreMarca like 'NativeInstruments'), (select IDCategoria from categoria where NombreCategoria like 'DJ'));
@@ -186,7 +190,7 @@
                           INSERT INTO productos VALUES (null, 'Fender Jimi Hendrix Stratocaster', 'Usada por El Padre de la Guitarra Eléctrica, varios temas fueron escritos con esta guitarra, incluso una terminó quemada.', '990', '2', '648', null, null, 'Marron', (select IDMarca from Marca where NombreMarca like 'Fender'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'F-Strat-JimiHendrix.jpg', '50', '1');
                           INSERT INTO productos VALUES (null, 'Fender Yngwie Malmsteem Stratocaster', 'Usada por Yngwie Malmsteem, varios temas fueron escritos con esta guitarra, entre ellos Far Beyond The Sun.', '2539', '2', '648', null, null, 'Blanco', (select IDMarca from Marca where NombreMarca like 'Fender'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'F-Strat-YngwieMalmsteem.jpg', '50', '1');
                           INSERT INTO productos VALUES (null, 'Fender Tom Morello Stratocaster', 'Usada por el artista Tom Morello, es un exponente importante en el mundo del Rock moderno, con grupos como Rage Against The Machine o Audioslave.', '1422', '2', '648', null, null, 'Negro', (select IDMarca from Marca where NombreMarca like 'Fender'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'F-Strat-TomMorello.jpg', '50', '1');
-                          INSERT INTO productos VALUES (null, 'Fender Eric Johnson Stratocaster', 'Usada por Eric Johnson, principal exponente del Soft-Rock o blues, con canciones como Cliff of Dover.', '2639', '2', '648', null, null, 'Marron', (select IDMarca from Marca where NombreMarca like 'Fender'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'F-PC1-PhilCollen.jpg', '50', '1');
+                          INSERT INTO productos VALUES (null, 'Fender Eric Johnson Stratocaster', 'Usada por Eric Johnson, principal exponente del Soft-Rock o blues, con canciones como Cliff of Dover.', '2639', '2', '648', null, null, 'Marron', (select IDMarca from Marca where NombreMarca like 'Fender'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'F-EricJohnson-Strat.jpg', '50', '1');
                           INSERT INTO productos VALUES (null, 'Jackson Adrian Smith San Dimas', 'Usada por el famoso guitarrista Adrian Smith, miembro de la banda Iron Maiden.', '9799', '5', '648', null, null, 'Azul', (select IDMarca from Marca where NombreMarca like 'Jackson'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'J-AdrianSmith.jpg', '50', '1');
                           INSERT INTO productos VALUES (null, 'Jackson Mick Thomson Soloist', 'Usada por el guitarrista Mick Thomson, miembro de la banda Slipknot.', '3899', '5', '648', null, null, 'Blanco', (select IDMarca from Marca where NombreMarca like 'Jackson'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'J-MickThomson.jpg', '50', '1');
                           INSERT INTO productos VALUES (null, 'Jackson RRT Rhoads MJ Series', 'Usada por la leyenda Randy Rhoads, el mejor guitarrista que hubo en los 80/90s, participó en Ozzy Osbourne, para Ozzy Osbourne', '2259', '5', '648', null, null, 'Negro', (select IDMarca from Marca where NombreMarca like 'Jackson'), (select IDCategoria from categoria where NombreCategoria like 'Guitarras'), 'J-RandyRhoads.jpg', '50', '1');

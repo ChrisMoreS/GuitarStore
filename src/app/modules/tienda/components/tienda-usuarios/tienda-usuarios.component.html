@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+
+<ng-template #Noiniciado>
+    <router-outlet></router-outlet>
+</ng-template>
+<div *ngIf="initiated == true, then iniciado, else Noiniciado"></div>
+<ng-template #iniciado>
+    <div class="container-fluid d-flex flex-row w-100">
+        <div class="ms-5 me-3 ps-5 w-25">
+            <h4 class="ms-4">Centro de Clientes</h4>
+            <br>
+            <div class="ms-5" *ngFor="let usuarios of usuario">
+                <p>{{usuarios.NombreUsuario}} {{usuarios.ApellidosUsuario}}
+                <br>
+                  {{usuarios.EmailUsuario}}
+                <br>
+                  Número de Cliente: {{usuarios.IDUsuario}}</p>
+              </div>
+              <div class="btn-group-vertical ms-4" role="group">
+                <a class="btn mt-1 mb-1 text-start">Ver Perfil</a>
+                <a class="btn mt-1 mb-1 text-start">Ver Pedidos</a>
+                <a class="btn mt-1 mb-1 text-start">Devolver un producto</a>
+                <a class="btn mt-1 mb-1 text-start">Comentar un producto</a>
+              </div>
+        </div>
+        <div class="ms-3 me-5 pe-5 w-75">
+            <router-outlet></router-outlet>
+        </div>
+    </div>    
+</ng-template>

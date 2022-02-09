@@ -53,7 +53,7 @@
         }
 
         if (isset($params->Usuario) && isset($params->EmailUsuario)) {
-            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE Usuario = :UsuarioCliente AND EmailUsuario = :EmailUsuario');
+            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE UsuarioUsuario = :UsuarioCliente AND EmailUsuario = :EmailUsuario');
             $prevsql->bindValue(':UsuarioCliente', $params->Usuario);
             $prevsql->bindValue(':EmailUsuario', $params->EmailUsuario);
             $prevsql->execute();
@@ -69,7 +69,7 @@
         }
 
         if (isset($params->Usuario)) {
-            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE Usuario = :UsuarioCliente');
+            $prevsql = $pdo->prepare('SELECT * FROM Usuarios WHERE UsuarioUsuario = :UsuarioCliente');
             $prevsql->bindValue(':UsuarioCliente', $params->Usuario);
             $prevsql->execute();
 
@@ -95,7 +95,7 @@
                 }
             }
         }
-            $sql = "INSERT INTO Usuarios(NombreUsuario, ApellidosUsuario, EmailUsuario, Usuario, Contraseña) 
+            $sql = "INSERT INTO Usuarios(NombreUsuario, ApellidosUsuario, EmailUsuario, UsuarioUsuario, ContraseñaUsuario) 
             values (:NombreCliente, :ApellidosCliente, :EmailCliente, :UsuarioCliente, :ContrasenaCliente)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':NombreCliente', $params->NombreUsuario);
@@ -147,7 +147,7 @@
         }
 
         $sql = "UPDATE Usuarios 
-        SET NombreUsuario=:NombreCliente, ApellidosUsuario=:ApellidosCliente, EmailUsuario=:EmailCliente, Usuario=:UsuarioCliente, Contraseña=PASSWORD_HASH(:ContraseñaCliente, PASSWORD_DEFAULT), FotoPerfilUsuario=:FotoPerfilCliente 
+        SET NombreUsuario=:NombreCliente, ApellidosUsuario=:ApellidosCliente, EmailUsuario=:EmailCliente, UsuarioUsuario=:UsuarioCliente, ContraseñaUsuario=PASSWORD_HASH(:ContraseñaCliente, PASSWORD_DEFAULT), FotoPerfilUsuario=:FotoPerfilCliente 
         WHERE IDUsuario=:idCliente";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':NombreCliente', $params->NombreUsuario);
