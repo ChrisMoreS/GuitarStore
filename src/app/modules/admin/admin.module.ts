@@ -13,6 +13,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from 'src/app/auth/auth.guard';
 import { AdminPantallaprincipalComponent } from './components/admindashboard/admin-pantallaprincipal/admin-pantallaprincipal.component';
+import { DataTableDirective } from 'angular-datatables';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AdminPantallaprincipalComponent } from './components/admindashboard/adm
       {path: 'login', component: AdminLoginComponent}
     ]),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    DataTableDirective
   ],
   providers: [CookieService],
 })

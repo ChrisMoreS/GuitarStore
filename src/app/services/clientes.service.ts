@@ -12,7 +12,7 @@ export class ClientesService {
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   ObtenerClientes(){
-    return this.http.get<any>(`http:/localhost/ConexionesGuitarStore/Clientes.php`)
+    return this.http.get<any>(`http://localhost/ConexionGuitarStore/Clientes.php`)
   }
 
   ObtenerUnClientes(idCliente: String){

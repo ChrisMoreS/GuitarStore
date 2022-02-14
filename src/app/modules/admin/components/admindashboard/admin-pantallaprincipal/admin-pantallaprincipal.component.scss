@@ -1,4 +1,37 @@
-.inicio{
+div{
     height: 37.35rem;
     width: 100%;
+        
+    background: linear-gradient(
+        -45deg,
+        #d98b19,
+        #d98b19,
+        #e79f31, 
+        #e79f31, 
+        #fdb73e, 
+        #fdb73e, 
+        #fed48b, 
+        #fed48b, 
+        #feedcf, 
+        #feedcf, 
+        #feedcf, 
+        #feedcf, 
+        #fed48b, 
+        #fed48b, 
+        #fdb73e, 
+        #fdb73e, 
+        #e79f31, 
+        #e79f31, 
+        #d98b19,
+        #d98b19);
+    background-size: 1200% 1200%;
+
+    animation: GradientAnimation 30s ease infinite;
+    
+    @keyframes GradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+
 }
