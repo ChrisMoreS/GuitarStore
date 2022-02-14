@@ -27,6 +27,13 @@ export class AdminLoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.ComprobarIniciado();
+  }
+
+  ComprobarIniciado(){
+    if (localStorage.getItem('Categoria') == 'admin') {
+      window.location.href = 'admin';
+    }
   }
 
   ComprobarLoginAdmin(){

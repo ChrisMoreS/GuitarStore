@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-adminfooter',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminfooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private Cookie: CookieService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  cerrarSesion(){
+    localStorage.clear();
+    this.Cookie.deleteAll('/admin');
+    window.location.reload();
   }
 
 }

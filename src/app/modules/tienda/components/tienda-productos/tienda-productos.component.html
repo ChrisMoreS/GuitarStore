@@ -15,7 +15,10 @@
                     <div class="cuerpo-carta">
                         <h5>{{guitarras.NombreProducto}}</h5>
                         <p>{{guitarras.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{guitarras.CategoriaProducto}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{guitarras.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(guitarras.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,7 +36,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{bajos.NombreProducto}}</h5>
                         <p>{{bajos.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{bajos.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{bajos.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(bajos.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,7 +57,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{baterias.NombreProducto}}</h5>
                         <p>{{baterias.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{baterias.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{baterias.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(baterias.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +78,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{teclados.NombreProducto}}</h5>
                         <p>{{teclados.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{teclados.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{teclados.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(teclados.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +99,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{microfonos.NombreProducto}}</h5>
                         <p>{{microfonos.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{microfonos.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{microfonos.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(microfonos.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +120,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{dj.NombreProducto}}</h5>
                         <p>{{dj.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{dj.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{dj.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(dj.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,7 +141,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{vientos.NombreProducto}}</h5>
                         <p>{{vientos.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{vientos.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{vientos.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(vientos.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +162,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{tradicional.NombreProducto}}</h5>
                         <p>{{tradicional.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{tradicional.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{tradicional.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(tradicional.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,7 +183,10 @@
                     <div class="cuerpo-carta" >
                         <h5>{{software.NombreProducto}}</h5>
                         <p>{{software.DescripcionProducto}}</p>
-                        <button class="boton btn btn-outline-dark" routerLink="{{software.NombreCategoria}}">Comprar</button>
+                        <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{software.IDProducto}}'>Comprar</button>
+                            <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(software.IDProducto)">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>

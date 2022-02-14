@@ -4,12 +4,15 @@
     </div>
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let bateria of Baterias; let i = index" >
-            <div class="carta">
+            <div class="carta mb-5 mt-5">
                 <img src="/assets/img/products/{{bateria.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{bateria.NombreProducto}}</h5>
                     <p>{{bateria.DescripcionProducto}}</p>
-                    <button class="boton btn btn-outline-dark" routerLink="{{bateria.CategoriaProducto}}">Comprar</button>
+                    <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
+                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '/productos/{{bateria.IDProducto}}'>Comprar</button>
+                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(bateria.IDProducto)">Agregar al carrito</button>
+                    </div>
                 </div>
             </div>
         </div>

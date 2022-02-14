@@ -30,6 +30,7 @@ import { DevolverProductoComponent } from './components/tienda-usuarios/user-das
 import { PerfilComponent } from './components/tienda-usuarios/user-dashboard/perfil/perfil.component';
 import { EvaluarProductoComponent } from './components/tienda-usuarios/user-dashboard/evaluar-producto/evaluar-producto.component';
 import { GeneralUserComponent } from './components/tienda-usuarios/user-dashboard/general-user/general-user.component';
+import { ProductoDetallesComponent } from './components/tienda-productos/producto-detalles/producto-detalles.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { GeneralUserComponent } from './components/tienda-usuarios/user-dashboar
     PerfilComponent,
     DevolverProductoComponent,
     EvaluarProductoComponent,
-    GeneralUserComponent
+    GeneralUserComponent,
+    ProductoDetallesComponent
   ],
   imports: [
     CommonModule,
@@ -70,15 +72,16 @@ import { GeneralUserComponent } from './components/tienda-usuarios/user-dashboar
         {path: 'sobre-nosotros', component: TiendaSobreNosotrosComponent},
         {path: 'marcas', component: TiendaMarcasComponent},
         {path: 'productos', component: TiendaProductosComponent},
-          {path: 'productos/guitarras', component: GuitarrasComponent},
-          {path: 'productos/bajos', component: BajosComponent},
-          {path: 'productos/baterias', component: BateriasComponent},
-          {path: 'productos/teclados', component: TecladosComponent},
-          {path: 'productos/microfonos', component: MicrofonosComponent},
-          {path: 'productos/dj', component: DjComponent},
-          {path: 'productos/vientos', component: VientoComponent},
-          {path: 'productos/tradicional', component: TradicionalComponent},
-          {path: 'productos/software', component: SoftwareComponent},
+        {path: 'productos/guitarras', component: GuitarrasComponent},
+        {path: 'productos/bajos', component: BajosComponent},
+        {path: 'productos/baterias', component: BateriasComponent},
+        {path: 'productos/teclados', component: TecladosComponent},
+        {path: 'productos/microfonos', component: MicrofonosComponent},
+        {path: 'productos/dj', component: DjComponent},
+        {path: 'productos/vientos', component: VientoComponent},
+        {path: 'productos/tradicional', component: TradicionalComponent},
+        {path: 'productos/software', component: SoftwareComponent},
+        {path: 'productos/:id', component:ProductoDetallesComponent},
         {path: 'user', component: TiendaUsuariosComponent, children: [
           {path: '', component: UserDashboardComponent, canActivate: [AuthUserGuard], children:[
             {path: '', component: GeneralUserComponent},

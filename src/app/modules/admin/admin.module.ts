@@ -12,6 +12,7 @@ import { AdminfooterComponent } from './components/adminfooter/adminfooter.compo
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from 'src/app/auth/auth.guard';
+import { AdminPantallaprincipalComponent } from './components/admindashboard/admin-pantallaprincipal/admin-pantallaprincipal.component';
 
 
 @NgModule({
@@ -22,12 +23,14 @@ import { AuthGuard } from 'src/app/auth/auth.guard';
     AdminTrabajadoresComponent,
     AdminheaderComponent,
     AdminfooterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminPantallaprincipalComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path: '', component: AdmindashboardComponent, canActivate: [AuthGuard], children:[
+        {path: '', component: AdminPantallaprincipalComponent},
         {path: 'productos', component: AdminProductosComponent},
         {path: 'clientes', component: AdminClientesComponent},
         {path: 'trabajadores', component: AdminTrabajadoresComponent}
