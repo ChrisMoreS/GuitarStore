@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
         confirmButtonText: 'Error'
       }).then( function (result) {
         if (true) {
-          window.location.href = '';
+          window.location.href = '/GuitarStore/';
           return false;
         }
         });
@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate {
         confirmButtonText: 'Error'
       }).then( function (result) {
         if (true) {
-          window.location.href = 'admin/login';
+          window.location.href = '/GuitarStore/admin/login';
           return false;
         }
         });

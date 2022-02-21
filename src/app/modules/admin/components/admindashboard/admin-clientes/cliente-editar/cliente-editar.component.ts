@@ -66,7 +66,7 @@ export class ClienteEditarComponent implements OnInit {
             }).then(
               result => {
                 if (result.isConfirmed) {
-                  window.location.href = '/admin/usuarios';
+                  window.location.href = '/GuitarStore/admin/usuarios';
                 }
               }
             );

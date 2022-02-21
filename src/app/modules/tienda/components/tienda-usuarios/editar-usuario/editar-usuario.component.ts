@@ -63,7 +63,7 @@ export class EditarUsuarioComponent implements OnInit {
             }).then(
               result => {
                 if (result.isConfirmed) {
-                  window.location.href = '/user/perfil';
+                  window.location.href = '/GuitarStore/user/perfil';
                 }
               }
             );

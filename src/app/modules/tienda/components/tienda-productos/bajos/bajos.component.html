@@ -5,7 +5,7 @@
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let bajo of Bajos; let i = index" >
             <div class="carta mb-5 mt-5" *ngIf="bajo.ActivadoProducto == '1'">
-                <img src="/assets/img/products/{{bajo.ImagenProducto}}">
+                <img src="assets/img/products/{{bajo.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{bajo.NombreProducto}}</h5>
                     <p>{{bajo.DescripcionProducto}}</p>

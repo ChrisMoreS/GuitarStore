@@ -5,7 +5,7 @@
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let soft of Software; let i = index" >
             <div class="carta mb-5 mt-5" *ngIf="soft.ActivadoProducto == '1'">
-                <img src="/assets/img/products/{{soft.ImagenProducto}}">
+                <img src="assets/img/products/{{soft.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{soft.NombreProducto}}</h5>
                     <p>{{soft.DescripcionProducto}}</p>

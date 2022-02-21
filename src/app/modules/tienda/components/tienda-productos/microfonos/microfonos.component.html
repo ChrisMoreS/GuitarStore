@@ -5,7 +5,7 @@
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let micros of Microfonos; let i = index" >
             <div class="carta mb-5 mt-5" *ngIf="micros.ActivadoProducto == '1'">
-                <img src="/assets/img/products/{{micros.ImagenProducto}}">
+                <img src="assets/img/products/{{micros.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{micros.NombreProducto}}</h5>
                     <p>{{micros.DescripcionProducto}}</p>

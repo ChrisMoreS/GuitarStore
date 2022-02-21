@@ -86,7 +86,7 @@ export class ProductoEditarComponent implements OnInit {
         }).then(
           result => {
             if (result.isConfirmed) {
-              window.location.href = '/admin/productos';
+              window.location.href = '/GuitarStore/admin/productos';
             }
           }
         );

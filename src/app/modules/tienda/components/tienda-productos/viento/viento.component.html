@@ -5,7 +5,7 @@
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let viento of Vientos; let i = index" >
             <div class="carta mb-5 mt-5" *ngIf="viento.ActivadoProducto == '1'">
-                <img src="/assets/img/products/{{viento.ImagenProducto}}">
+                <img src="assets/img/products/{{viento.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{viento.NombreProducto}}</h5>
                     <p>{{viento.DescripcionProducto}}</p>

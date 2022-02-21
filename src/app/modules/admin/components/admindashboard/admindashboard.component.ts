@@ -25,7 +25,7 @@ export class AdmindashboardComponent implements OnInit {
       if (!localStorage.getItem('usuario')) {
         this.Cookies.deleteAll('/admin');
         localStorage.clear();
-        window.location.href = 'admin/login';
+        window.location.href = '/GuitarStore/admin/login';
     }
   }
 

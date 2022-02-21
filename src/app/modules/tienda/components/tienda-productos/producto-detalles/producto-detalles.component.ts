@@ -56,7 +56,7 @@ export class ProductoDetallesComponent implements OnInit {
     var usu = String(localStorage.getItem('idUsuario'));
     let carrito = {IDUsuario: usu, IDProducto: this.idProducto, CantidadCarrito: this.FormCarrito.value.CantidadCarrito};
     this.CarritoSVC.AgregarItem(carrito).subscribe(res => {
-      window.location.href = '/productos'
+      window.location.href = '/GuitarStore/productos'
     });
   }
 }
