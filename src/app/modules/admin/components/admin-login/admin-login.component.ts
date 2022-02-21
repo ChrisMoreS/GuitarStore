@@ -32,10 +32,10 @@ export class AdminLoginComponent implements OnInit {
 
   ComprobarIniciado(){
     if (localStorage.getItem('Categoria') == 'admin') {
-      window.location.href = '/GuitarStore/admin';
+      window.location.href = '/admin';
     }
     if (localStorage.getItem('Categoria') == 'registered') {
-      window.location.href = '/GuitarStore/';
+      window.location.href = '';
     }
   }
 
@@ -51,7 +51,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed ||result.dismiss) {
-            window.location.href = '/GuitarStore/';
+            window.location.href = '';
           }
         });
       }
@@ -63,7 +63,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/GuitarStore/admin/';
+            window.location.href = '/admin';
             localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
             localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
             localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
@@ -82,7 +82,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/GuitarStore/admin/login';
+            window.location.href = '/admin/login';
           }
       }
     )})

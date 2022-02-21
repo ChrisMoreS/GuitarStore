@@ -9,7 +9,7 @@ export class AuthUserGuard implements CanActivate {
   canActivate(): boolean {
 
     if (!localStorage.getItem('usuario')) {
-      window.location.href = 'GuitarStore/user/login';
+      window.location.href = 'user/login';
       return false;
     }
 
