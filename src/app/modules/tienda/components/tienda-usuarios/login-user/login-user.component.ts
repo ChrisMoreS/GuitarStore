@@ -55,7 +55,7 @@ export class LoginUserComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/GuitarStore/user/login';
+            window.location.href = '/user/login';
           }
       }
     )})

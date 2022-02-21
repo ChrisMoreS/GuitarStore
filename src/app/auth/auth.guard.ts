@@ -21,11 +21,12 @@ export class AuthGuard implements CanActivate {
         confirmButtonText: 'Error'
       }).then( function (result) {
         if (true) {
-          window.location.href = '/GuitarStore/';
+          window.location.href = '';
           return false;
         }
         });
     }
+
     if (!this.Cookies.get('categoria')) {
       Swal.fire({
         icon: 'warning',
@@ -33,7 +34,7 @@ export class AuthGuard implements CanActivate {
         confirmButtonText: 'Error'
       }).then( function (result) {
         if (true) {
-          window.location.href = '/GuitarStore/admin/login';
+          window.location.href = '/admin/login';
           return false;
         }
         });
