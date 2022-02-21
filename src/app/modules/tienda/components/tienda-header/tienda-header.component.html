@@ -35,7 +35,7 @@
                     <div class="offcanvas-body d-flex flex-column ">
                       <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink = '/user/perfil'>Vista General</a>
                       <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink="/user/perfil">Ver Perfil</a>
-                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink= '/admin' *ngIf="UserCategory.toLowerCase() == 'admin'">Panel de Control</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink= 'admin/' *ngIf="UserCategory.toLowerCase() == 'admin'">Panel de Control</a>
                     </div>
                     <hr style="width: 90%; margin: auto;">
                     <a class="link-dark text-decoration-none fs-5 mt-2 mx-auto" style="margin-bottom: 4em;" (click)="cerrarSesion()" >Salir</a>
