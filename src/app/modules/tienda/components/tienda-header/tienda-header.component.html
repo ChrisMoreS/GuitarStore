@@ -53,12 +53,17 @@
                 <div class="dropdown-menu" style="width: 18em; height: 20em; overflow-y: scroll; background-color: white !important;" aria-labelledby="dropdownMenuButton1">
                     <div *ngFor="let producto of productos, let i = index," style="width: 100%; margin: 0; padding: 0;" class="dropdown-item d-flex flex-column justify-content-center align-items-center">
                       <img style="object-fit: scale-down;" height="75px" width="75px" src="assets/img/products/{{producto[0].ImagenProducto}}" *ngIf="producto[0].ImagenProducto">
-                      <a class="link-dark text-decoration-none">
+                      <a class="link-dark text-decoration-none text-center">
                          {{producto[0].NombreProducto}}
+                         <br>
+                         <h6>Precio: {{producto[0].PrecioProducto * producto[1]}}.00€</h6>
                       </a>
                       <span class="w-75 d-flex flex-row justify-content-between"><h6>Cantidad: {{producto[1]}}</h6> <p class="w-25 d-flex flex-row justify-content-between"><button class="btn btn-secondary d-flex justify-content-center align-items-center" style="width: 15px; height: 25px;" (click)="CarritoAgregar(producto[0].IDProducto)"><i class="fa fa-plus fa-sm" style="width: 10px; height: 10px;"></i></button> <button class="btn btn-danger d-flex justify-content-center align-items-center" style="width: 15px; height: 25px;" (click)="borrarCarrito(producto[0].IDProducto);"><i class="fa fa-minus fa-sm" style="width: 10px; height: 10px;"></i></button></p></span>
                     </div>
-                    <div style="width: 100%; margin: 0; padding: 0;" class="dropdown-menu d-flex flex-row justify-content-evenly">
+                    <div class="dropdown-item d-flex justify-content-center align-items-center">
+                      <h6>Total: {{total}}</h6>
+                    </div>
+                    <div style="width: 100%; margin: 0; padding: 0;" class="dropdown-item d-flex flex-row justify-content-evenly">
                       <button class="btn btn-outline-dark">Pagar Ahora</button>
                       <button class="btn btn-outline-dark" (click)="BorrarTodoCarrito()">Borrar Carrito</button>
                     </div>

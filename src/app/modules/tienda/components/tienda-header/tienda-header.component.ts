@@ -23,6 +23,8 @@ export class TiendaHeaderComponent implements OnInit {
   carrito: any = [];
   productos: any= [];
 
+  total: number = 0;
+
   constructor(private Cookie: CookieService, private ClienteSVC: ClientesService, private CarritoSVC: CarritoService, private ProductosSVC: ProductosService) { }
 
   ngOnInit(): void {
@@ -48,6 +50,7 @@ export class TiendaHeaderComponent implements OnInit {
         this.ProductosSVC.ObtenerUnProducto(element.IDProducto).subscribe( res => {
           res.push(element.CantidadCarrito);
           this.productos.push(res);
+          this.total = this.total + (res[0].PrecioProducto * element.CantidadCarrito);
         }
         );
       });
