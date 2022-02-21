@@ -4,7 +4,7 @@
     </div>
     <div class="contenedor">
         <div class="repiteproducto" *ngFor="let dj of DJE; let i = index" >
-            <div class="carta mb-5 mt-5">
+            <div class="carta mb-5 mt-5" *ngIf="dj.ActivadoProducto == '1'">
                 <img src="/assets/img/products/{{dj.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{dj.NombreProducto}}</h5>

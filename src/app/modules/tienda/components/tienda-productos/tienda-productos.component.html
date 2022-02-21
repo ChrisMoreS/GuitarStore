@@ -10,7 +10,7 @@
         </div>
         <div class="contenedor">
             <div class="repiteproducto" *ngFor="let guitarras of ListaGuitarras; let i = index" >
-                <div class="carta" *ngIf="i < 6">
+                <div class="carta" *ngIf="i < 6 && guitarras.ActivadoProducto == '1'">
                     <img src="/assets/img/products/{{guitarras.ImagenProducto}}">
                     <div class="cuerpo-carta">
                         <h5>{{guitarras.NombreProducto}}</h5>
