@@ -1,1 +1,27 @@
-<p>perfil works!</p>
+<div class="container-fluid w-100 mt-3">
+    <div class="container-fluid mx-auto mb-4">
+        <h4 class="mx-auto text-center">Perfil</h4>
+    </div>
+    <div class="container-fluid mx-auto text-start mt-2 mb-5" *ngFor="let cli of cliente">
+        <div class="row g-3 mx-auto">
+            <div class="col-md-4 mx-auto">
+                <span><strong>Nombre:</strong> {{cli.NombreUsuario}}</span> 
+            </div>
+            <div class="col-md-4 mx-auto">
+                <span><strong>Apellidos:</strong> {{cli.ApellidosUsuario}}</span>
+            </div>
+        </div>
+        <div class="row g-3 mx-auto">
+            <div class="col-md-4 mx-auto">
+                <span><strong>Usuario:</strong> {{cli.UsuarioUsuario}}</span>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <span><strong>Email:</strong> {{cli.EmailUsuario}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-evenly align-items-center" *ngFor="let cli of cliente">
+        <button class="btn btn-warning" routerLink="/user/editar/{{cli.IDUsuario}}"> Editar Perfil</button>
+        <button class="btn btn-danger" (click)="BorrarUsuario()"> Borrar Perfil </button>
+    </div>
+</div>

@@ -1,1 +1,34 @@
-<div>Productos</div>
+<div class="containainer-fluid d-flex flex-column justify-content-start align-items-center mb-5">
+    <h3 class="mt-5 mb-3">PRODUCTOS</h3>
+    <div style="width: 90%; margin-bottom: 2em;">
+        <button class="btn btn-outline-dark mt-3 mb-5" routerLink="/admin/agregar/productos">Agregar Productos</button>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTable" class="table w-100 display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Marca</th> 
+                    <th>Categoria</th>
+                    <th>Existencias</th>
+                    <th>Activado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productos, let i = index">
+                    <td style="width: 1em;" class="pe-1">{{i+1}}</td>
+                    <td style="width: 15em;" class="ps-1 pe-1">{{producto.NombreProducto}}</td>
+                    <td style="width: 18em;" class="ps-1 pe-1">{{producto.DescripcionProducto}}</td>
+                    <td style="width: 5em;" class="ps-1 pe-1">{{producto.PrecioProducto}}€</td>
+                    <td style="width: 7em;" class="ps-1 pe-1">{{producto.MarcaProducto}}</td>
+                    <td style="width: 7em;" class="ps-1 pe-1">{{producto.CategoriaProducto}}</td>
+                    <td style="width: 7em;" class="ps-1 pe-1">{{producto.ExistenciasProducto}}</td>
+                    <td style="width: 5em;" class="ps-1 pe-1">{{producto.ActivadoProducto}}</td>
+                    <td style="width: 7em;" class="ps-1"><button type="button" class="btn btn-outline-dark" routerLink="/admin/productos/{{producto.IDProducto}}"><i class="fa fa-pen"></i></button> | <button class="btn btn-outline-dark" (click)="borrarProductos(producto.IDProducto)" ><i class="fa fa-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

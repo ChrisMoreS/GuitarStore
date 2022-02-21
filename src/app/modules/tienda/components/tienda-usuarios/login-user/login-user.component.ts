@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { NEVER } from 'rxjs';
 import { ClientesService } from 'src/app/services/clientes.service';
 import Swal from 'sweetalert2';
 
@@ -37,8 +38,11 @@ export class LoginUserComponent implements OnInit {
         localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
         localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
         localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
-        this.Cookie.set('usuario', this.usu[0]['UsuarioUsuario'])
-        this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario']);
+        localStorage.setItem('Categoria', this.usu[0]['CategoriaUsuario']);
+
+        if (this.usu[0]['CategoriaUsuario'] == 'Admin') {
+          this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario'], 0, '/admin');
+        }
         
       }
 

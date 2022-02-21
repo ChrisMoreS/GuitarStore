@@ -1,0 +1,47 @@
+<div class="containainer-fluid d-flex flex-column justify-content-start align-items-center mb-5">
+    <div style="width: 90%; margin-bottom: 2em;">
+        <h4 class="text-center mb-4 mt-5">EDITAR PERFIL</h4>
+        <form ngValidaetNative [formGroup]="form" (ngSubmit)="EditarUsuario()" class="mx-auto w-75" enctype="multipart/form-data">
+            <div class="row g-3 mx-auto">
+                <div class="col-md-4">
+                    <label for="Nombre" class="form-label">Nombre</label>
+                    <input class="form-control" formControlName="NombreUsuario" type="text" id="Nombre">
+                </div>
+                <div class="col-md-4">
+                    <label for="Apellidos" class="form-label">Apellidos</label>
+                    <input class="form-control" formControlName="ApellidosUsuario" type="text" id="Apellidos">
+                </div>
+                <div class="col-md-4">
+                    <label for="Usuario" class="form-label">Usuario</label>
+                    <input class="form-control" formControlName="Usuario" type="text" id="Usuario">
+                </div>
+            </div>
+            <div class="row g-3 mx-auto mt-2">
+                <div class="col-12">
+                    <label for="Email" class="form-label">Email</label>
+                    <input class="form-control" formControlName="EmailUsuario" type="text" id="Email">
+                </div>
+            </div>
+            <div class="row g-3 mx-auto mt-2">
+                <div class="col-md-6">
+                    <label for="Contrasena" class="form-label">Contraseña</label>
+                    <input class="form-control" formControlName="ContrasenaUsuario" type="password" id="Contrasena">
+                </div>
+                <div class="col-md-6">
+                    <label for="Contrasena-rep" class="form-label">Repita su Contraseña</label>
+                    <input class="form-control" formControlName="ContrasenaRUsuario" type="password" id="Contrasena-rep">
+                </div>
+            </div>
+            <div class="d-flex flex-row flex-wrap justify-content-evenly mt-5">
+                <div class="">
+                    <button type="submit" class="btn btn-outline-dark mx-auto">Editar</button>
+                </div>
+                <div class="">
+                    <button type="reset" class="btn btn-outline-dark mx-auto">Resetear</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <button class="btn btn-outline-dark mx-auto" routerLink="/user/perfil">Volver</button>
+</div>

@@ -1,4 +1,18 @@
 div{
-    height: 37.35rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    table{
+        width: 80%;
+        margin-top: 2em;
+        th{
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
+    }
+
 }

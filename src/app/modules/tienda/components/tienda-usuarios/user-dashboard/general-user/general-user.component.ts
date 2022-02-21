@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-general-user',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralUserComponent implements OnInit {
 
-  constructor() { }
+  cliente: any =[];
 
+  constructor(
+    private ClientesSVC: ClientesService
+  ) { 
+  }
+  
+  BuscarUsuario(id: any){
+    this.ClientesSVC.ObtenerUnClientes(id).subscribe(res =>{
+      this.cliente = res;
+    });
+  }
+  
+  idUsuario = localStorage.getItem('idUsuario');
+  
   ngOnInit(): void {
+    this.BuscarUsuario(this.idUsuario);
   }
 
 }

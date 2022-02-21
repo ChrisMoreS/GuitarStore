@@ -19,7 +19,7 @@ export class AdmindashboardComponent implements OnInit {
    }
 
    comprobarAdmin(){
-     if (this.Cookies.get('categoria') == 'admin' ) {
+     if (this.Cookies.get('categoria').toLowerCase() == 'admin' ) {
        this.AdminLogged = true;
       }
       if (!localStorage.getItem('usuario')) {

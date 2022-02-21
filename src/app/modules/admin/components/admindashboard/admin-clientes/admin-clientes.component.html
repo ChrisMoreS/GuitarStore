@@ -1,13 +1,30 @@
-<div class="containainer-fluid d-flex flex-column justify-content-start align-items-center">
-    <h3 class="mt-5">CLIENTES</h3>
-    <div>
-        <table>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
+<div class="containainer-fluid d-flex flex-column justify-content-start align-items-center mb-5">
+    <h3 class="mt-5 mb-3">CLIENTES</h3>
+    <div style="width: 90%; margin-bottom: 2em;">
+        <button class="btn btn-outline-dark mt-3 mb-5" routerLink="/admin/agregar/usuarios">Agregar Clientes</button>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="dataTable" class="table w-100 display">
+            <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Usuario</th>
+                    <th>Categoria</th>
+                    <th>Acción</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="let usuarios of clientes, let i = index">
+                    <td style="width: 1em;" class="pe-2">{{i+1}}</td>
+                    <td style="width: 10em;" class="ps-2 pe-2">{{usuarios.NombreUsuario}}</td>
+                    <td style="width: 10em;" class="ps-2 pe-2">{{usuarios.ApellidosUsuario}}</td>
+                    <td style="width: 10em;" class="ps-2 pe-2">{{usuarios.EmailUsuario}}</td>
+                    <td style="width: 10em;" class="ps-2 pe-2">{{usuarios.UsuarioUsuario}}</td>
+                    <td style="width: 10em;" class="ps-2 pe-2">{{usuarios.CategoriaUsuario}}</td>
+                    <td style="width: 10em;" class="ps-2"><button type="button" class="btn btn-outline-dark" routerLink="/admin/usuarios/{{usuarios.IDUsuario}}"><i class="fa fa-pen"></i></button> | <button class="btn btn-outline-dark" (click)="borrarClientes(usuarios.IDUsuario)"><i class="fa fa-trash"></i></button></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

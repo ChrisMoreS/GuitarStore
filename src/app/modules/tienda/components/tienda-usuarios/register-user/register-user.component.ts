@@ -22,8 +22,7 @@ export class RegisterUserComponent implements OnInit {
 
   constructor(
     private ClientesSVC: ClientesService,
-    private Formulario: FormBuilder,
-    private Cookies: CookieService
+    private Formulario: FormBuilder
   ) { }
 
   ngOnInit(): void {

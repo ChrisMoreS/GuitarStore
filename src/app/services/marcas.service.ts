@@ -18,8 +18,8 @@ export class MarcasService {
         return this.http.get<any>(`http://localhost/ConexionGuitarStore/Marcas.php`)
     }
 
-    ObtenerUnaMarca(idMarca: String){
-        return this.http.get<any>(`http://localhost/ConexionGuitarStore/Marcas.php?idMarca=${idMarca}`)
+    ObtenerUnaMarca(NombreMarca: String){
+        return this.http.get<any>(`http://localhost/ConexionGuitarStore/Marcas.php?NombreMarca=${NombreMarca}`)
     }
 
     EditarUnaMarca(idMarca: String, datosMarcas: Marcas){

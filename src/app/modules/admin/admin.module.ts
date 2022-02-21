@@ -6,14 +6,17 @@ import { RouterModule } from '@angular/router';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AdminProductosComponent } from './components/admindashboard/admin-productos/admin-productos.component';
 import { AdminClientesComponent } from './components/admindashboard/admin-clientes/admin-clientes.component';
-import { AdminTrabajadoresComponent } from './components/admindashboard/admin-trabajadores/admin-trabajadores.component';
 import { AdminheaderComponent } from './components/adminheader/adminheader.component';
-import { AdminfooterComponent } from './components/adminfooter/adminfooter.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from 'src/app/auth/auth.guard';
 import { AdminPantallaprincipalComponent } from './components/admindashboard/admin-pantallaprincipal/admin-pantallaprincipal.component';
-import { DataTableDirective } from 'angular-datatables';
+import { ClienteEditarComponent } from './components/admindashboard/admin-clientes/cliente-editar/cliente-editar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoEditarComponent } from './components/admindashboard/admin-productos/producto-editar/producto-editar.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ClienteAgregarComponent } from './components/admindashboard/admin-clientes/cliente-agregar/cliente-agregar.component';
+import { ProductoAgregarComponent } from './components/admindashboard/admin-productos/producto-agregar/producto-agregar.component';
 
 
 @NgModule({
@@ -21,11 +24,13 @@ import { DataTableDirective } from 'angular-datatables';
     AdmindashboardComponent,
     AdminProductosComponent,
     AdminClientesComponent,
-    AdminTrabajadoresComponent,
     AdminheaderComponent,
-    AdminfooterComponent,
     AdminLoginComponent,
-    AdminPantallaprincipalComponent
+    AdminPantallaprincipalComponent,
+    ClienteEditarComponent,
+    ProductoEditarComponent,
+    ClienteAgregarComponent,
+    ProductoAgregarComponent
   ],
   imports: [
     CommonModule,
@@ -33,14 +38,18 @@ import { DataTableDirective } from 'angular-datatables';
       {path: '', component: AdmindashboardComponent, canActivate: [AuthGuard], children:[
         {path: '', component: AdminPantallaprincipalComponent},
         {path: 'productos', component: AdminProductosComponent},
-        {path: 'clientes', component: AdminClientesComponent},
-        {path: 'trabajadores', component: AdminTrabajadoresComponent}
+        {path: 'productos/:id', component: ProductoEditarComponent},
+        {path: 'agregar/productos', component: ProductoAgregarComponent},
+        {path: 'usuarios', component: AdminClientesComponent},
+        {path: 'usuarios/:id', component: ClienteEditarComponent},
+        {path: 'agregar/usuarios', component: ClienteAgregarComponent},
       ]},
       {path: 'login', component: AdminLoginComponent}
     ]),
     ReactiveFormsModule,
     FormsModule,
-    DataTableDirective
+    DataTablesModule,
+    HttpClientModule,
   ],
   providers: [CookieService],
 })

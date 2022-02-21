@@ -23,11 +23,15 @@ export class ClientesService {
     return this.http.post(`http://localhost/ConexionGuitarStore/Clientes.php`,datosCliente)
   }
 
-  EditarUnCliente(idCliente: String, datosCliente:Clientes){
+  subirImagen(foto: any){
+    return this.http.post(`http://localhost/ConexionGuitarStore/imagenClientes.php`, foto)
+  }
+
+  EditarUnCliente(idCliente: string, datosCliente:Clientes){
     return this.http.put(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`,datosCliente)
   }
 
-  BorrarUnCliente(idCliente: String){
+  BorrarUnCliente(idCliente: string){
     return this.http.delete(`http://localhost/ConexionGuitarStore/Clientes.php?idCliente=${idCliente}`)
   }
   

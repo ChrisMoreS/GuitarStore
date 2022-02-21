@@ -31,6 +31,7 @@ import { PerfilComponent } from './components/tienda-usuarios/user-dashboard/per
 import { EvaluarProductoComponent } from './components/tienda-usuarios/user-dashboard/evaluar-producto/evaluar-producto.component';
 import { GeneralUserComponent } from './components/tienda-usuarios/user-dashboard/general-user/general-user.component';
 import { ProductoDetallesComponent } from './components/tienda-productos/producto-detalles/producto-detalles.component';
+import { EditarUsuarioComponent } from './components/tienda-usuarios/editar-usuario/editar-usuario.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ProductoDetallesComponent } from './components/tienda-productos/product
     DevolverProductoComponent,
     EvaluarProductoComponent,
     GeneralUserComponent,
-    ProductoDetallesComponent
+    ProductoDetallesComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -86,9 +88,7 @@ import { ProductoDetallesComponent } from './components/tienda-productos/product
           {path: '', component: UserDashboardComponent, canActivate: [AuthUserGuard], children:[
             {path: '', component: GeneralUserComponent},
             {path: 'perfil', component: PerfilComponent},
-            {path: 'pedidos', component: PedidosComponent},
-            {path: 'devolver', component: DevolverProductoComponent},
-            {path: 'evaluar', component: EvaluarProductoComponent}
+            {path: 'editar/:id', component: EditarUsuarioComponent}
           ]},
           {path: 'login', component: LoginUserComponent},
           {path: 'register', component: RegisterUserComponent}

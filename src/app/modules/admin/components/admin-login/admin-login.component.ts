@@ -34,13 +34,16 @@ export class AdminLoginComponent implements OnInit {
     if (localStorage.getItem('Categoria') == 'admin') {
       window.location.href = 'admin';
     }
+    if (localStorage.getItem('Categoria') == 'registered') {
+      window.location.href = '';
+    }
   }
 
   ComprobarLoginAdmin(){
     this.ComprobarSVC.comprobarLogin(this.form.value).subscribe(res => {
       this.usu = res;
       console.log(res);
-      if (this.usu[0]['CategoriaUsuario'] == 'registered') {
+      if (this.usu[0]['CategoriaUsuario'].toLowerCase() == 'registered') {
         Swal.fire({
           icon: 'error',
           title: 'Error al Verificar',
@@ -52,7 +55,7 @@ export class AdminLoginComponent implements OnInit {
           }
         });
       }
-      if (this.usu[0]['CategoriaUsuario'] == 'admin') {
+      if (this.usu[0]['CategoriaUsuario'].toLowerCase() == 'admin') {
         Swal.fire({
           icon: 'success',
           title: 'Usuario Verificado',

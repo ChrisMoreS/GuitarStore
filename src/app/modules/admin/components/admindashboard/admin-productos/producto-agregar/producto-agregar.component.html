@@ -1,0 +1,63 @@
+<div class="containainer-fluid d-flex flex-column justify-content-start align-items-center mb-5">
+    <h3 class="mt-5 mb-4">PRODUCTOS</h3>
+    <div style="width: 90%; margin-bottom: 2em;">
+        <h4 class="text-center mb-4">AGREGAR</h4>
+        <form ngValidaetNative [formGroup]="producto" (ngSubmit)="AgregarProducto()" class="mx-auto w-75" enctype="multipart/form-data">
+            <div class="row g-3 mx-auto">
+                <div class="col-md-6">
+                    <label for="Nombre" class="form-label">Nombre</label>
+                    <input class="form-control" formControlName="NombreProducto" type="text" id="Nombre">
+                </div>
+                <div class="col-md-6">
+                    <label for="Precio" class="form-label">Precio</label>
+                    <input class="form-control" formControlName="PrecioProducto" type="number" id="Precio">
+                </div>
+            </div>
+            <div class="row g-3 mx-auto">
+                <div class="col-12">
+                        <label for="Descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" formControlName="DescripcionProducto" type="text" id="Descripcion" style="height: 8em;"></textarea>
+                </div>
+            </div>
+            <div class="row g-3 mx-auto mt-2">
+                <div class="col-md-6">
+                    <label for="Marca" class="form-label">Marca</label>
+                    <select class="form-control" formControlName="MarcaProducto" id="Marca">
+                        <option *ngFor="let marca of marcas" value="{{marca.IDMarca}}">{{marca.NombreMarca}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Categoria" class="form-label">Categoria</label>
+                    <select class="form-control" formControlName="CategoriaProducto" id="Categoria">
+                        <option *ngFor="let categoria of categorias" value="{{categoria.IDCategoria}}">{{categoria.NombreCategoria}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 mx-auto mt-2">
+                <div class="col-md-6">
+                    <label for="Existencias" class="form-label">Existencias</label>
+                    <input class="form-control" formControlName="ExistenciasProducto" type="number" id="Existencias">
+                </div>
+                <div class="col-md-6">
+                    <label for="Activado" class="form-label">Activado</label>
+                    <select formControlName="ActivadoProducto" class="form-control" id="Activado">
+                        <option value="1">Por Defecto (Activado)</option>
+                        <option value="0">Desactivado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-3 mx-auto mt-2">
+            </div>
+            <div class="d-flex flex-row flex-wrap justify-content-evenly mt-5">
+                <div class="">
+                    <button type="submit" class="btn btn-outline-dark mx-auto">Registrar</button>
+                </div>
+                <div class="">
+                    <button type="reset" class="btn btn-outline-dark mx-auto">Resetear</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <button class="btn btn-outline-dark mx-auto">Volver</button>
+</div>

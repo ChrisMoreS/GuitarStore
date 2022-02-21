@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-adminheader',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminheaderComponent implements OnInit {
 
-  constructor() { }
+  user!: any;
+
+  constructor(
+    private Cookie: CookieService
+  ) { }
 
   ngOnInit(): void {
+    this.comprobarSesion();
+  }
+
+  comprobarSesion(){
+    if (localStorage.getItem('usuario')) {
+      this.user = localStorage.getItem('usuario');
+    }
+  }
+
+  cerrarSesion(){
+    localStorage.clear();
+    this.Cookie.deleteAll('/admin');
+    window.location.reload();
   }
 
 }

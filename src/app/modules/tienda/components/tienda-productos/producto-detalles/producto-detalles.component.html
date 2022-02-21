@@ -1,1 +1,33 @@
-<p>producto-detalles works!</p>
+<div class="container-fluid vw-100 d-flex flex-row flex-wrap justify-content-center" *ngFor="let productos of producto">
+    <div class="w-25 me-5">
+        <img src="assets/img/products/{{productos.ImagenProducto}}" alt="imagen" style="object-fit: scale-down; height: 500px; width: 100%">
+    </div>
+    <div class="w-50 d-flex flex-column flex-wrap justify-content-center ms-5">
+        <h1>{{productos.NombreProducto}}</h1>
+        <p>{{productos.DescripcionProducto}}</p>
+        <p><strong>Precio:</strong> {{productos.PrecioProducto}}€ </p>
+        <div>
+            <form [formGroup]="FormCarrito" (submit)="AgregarCarrito()">
+                <p>Nº de Productos: 
+                    <input list="CantidadCarrito" type="number" min="1" formControlName="CantidadCarrito">
+                    <datalist id="CantidadCarrito">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </datalist>
+                </p>
+                <button type="submit" class="btn btn-outline-dark">Agregar Al Carrito</button>
+            </form>
+        </div>
+        <div class="mt-5" *ngFor="let marcas of marca">
+            <img src="assets/img/logos/{{marcas.ImagenMarca}}" style="object-fit: scale-down; width: 150px;">
+        </div>
+    </div>
+</div>

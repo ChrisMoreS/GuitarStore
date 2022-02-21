@@ -1,19 +1,30 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container-fluid mt-2 mb-2 ms-4 me-4 d-flex flex-row align-items-center justify-content-between">
-            <div class="row">
+        <div class="container-fluid g-3 mt-2 mb-2 ms-4 me-4 d-flex flex-row align-items-center justify-content-between">
+            <div class="row-md-6 w-25 text-center">
                 <a class="navbar-brand" href="#"><img src="/assets/img/logos/LOGOBLANCO.svg" alt=""></a>
             </div>
-            <div class="row">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="row-md-6">
+                <h4 class="text-light text-center">Bienvenido {{user}}</h4>
+                <p class="text-center link-light" style="cursor: pointer;" (click)="cerrarSesion()">CERRAR SESIÓN</p>
+            </div>
+            <div class="row-md-6 w-25 text-center">
                 <div class="collapse navbar-collapse" id="navbarID">
                     <div class="navbar-nav">
                         <a class="nav-link link-light" aria-current="page" routerLink="/admin">Home</a>
-                        <a class="nav-link link-light" routerLink="/admin/productos">Productos</a>
-                        <a class="nav-link link-light" routerLink="/admin/clientes">Clientes</a>
-                        <a class="nav-link link-light" routerLink="/admin/trabajadores">Trabajadores</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link-light dropdown-toggle" id="dropdownProductos" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownProductos">
+                                <li><a class="link-dark text-decoration-none dropdown-item" routerLink="/admin/productos">Control de Productos</a></li>
+                                <li><a class="link-dark text-decoration-none dropdown-item" routerLink="/admin/agregar/productos">Agregar Producto</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link-light dropdown-toggle" id="dropdownClientes" data-bs-toggle="dropdown" aria-expanded="true">Usuarios</a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownClientes">
+                                <li><a class="link-dark text-decoration-none dropdown-item" routerLink="/admin/usuarios">Control de Usuarios</a></li>
+                                <li><a class="link-dark text-decoration-none dropdown-item" routerLink="/admin/agregar/usuarios">Agregar Usuarios</a></li>
+                            </ul>
+                        </li>
                     </div>
                 </div>
             </div>

@@ -8,11 +8,20 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AdminfooterComponent implements OnInit {
 
+  user!: any;
+
   constructor(
     private Cookie: CookieService
   ) { }
 
   ngOnInit(): void {
+    this.comprobarSesion();
+  }
+
+  comprobarSesion(){
+    if (localStorage.getItem('usuario')) {
+      this.user = localStorage.getItem('usuario');
+    }
   }
 
   cerrarSesion(){

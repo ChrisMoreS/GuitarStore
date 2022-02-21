@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
 
-    if (this.Cookies.get('categoria') !== 'admin') {
+    if (this.Cookies.get('categoria').toLowerCase() !== 'admin') {
       Swal.fire({
         icon: 'warning',
         title: 'No hay una sesión de administrador iniciada',

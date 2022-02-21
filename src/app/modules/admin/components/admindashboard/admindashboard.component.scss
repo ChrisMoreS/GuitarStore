@@ -1,24 +1,21 @@
-.admin{
+body{
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .d-flex{
-        width: 80%;
-        flex-direction: row;
-        align-items: center;
-        justify-content: start;
+    width: 100%;
+
+    .cabeza{
+        width: 100%;
+        flex: 0 0 auto;
+        position: relative;
     }
-    table{
-        button:hover{
-            box-shadow: 0px 0px 0px #fec503;
-        }
-        td, th{
-            font-size: 15px;
-        }
+
+    .cuerpo{
+        width: 100%;
+        flex: 1 0 auto;
     }
-    .modal{
-        button:hover{
-            box-shadow: 0px 0px 0px #fec503;
-        }
+    
+    .pies{
+        width: 100%;
+        flex: 0 0 auto;
     }
 }
