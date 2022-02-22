@@ -1,13 +1,9 @@
 <header>
     <nav class="navbar border-dark navbar-light p-1 pt-4">
       <div class="container-fluid pb-3 ms-2 me-2 mt-3">
-        <a class="navbar-brand" routerLink="/">
+        <a class="navbar-brand" routerLink="">
           <img src="assets/img/logos/LOGONEGRO.svg" alt="" width="250">
         </a>
-        <form class="d-flex justify-content-center align-items-center">
-          <input class="form-control col-md-6 me-1 border-dark" type="search" placeholder="Escriba su busqueda" aria-label="Search">
-          <button class="btn btn-outline-dark ms-1" type="submit">Buscar</button>
-        </form>
         <ul class="nav justify-content-end align-items-center">
           <div class="nav align-items-center">
             <li class="nav-item ">
@@ -33,16 +29,16 @@
                         Número de Cliente: {{usuarios.IDUsuario}}</p>
                     </div>
                     <div class="offcanvas-body d-flex flex-column ">
-                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink = '/user/perfil'>Vista General</a>
-                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink="/user/perfil">Ver Perfil</a>
-                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink= 'admin/' *ngIf="UserCategory.toLowerCase() == 'admin'">Panel de Control</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink = 'user/perfil'>Vista General</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink="user/perfil">Ver Perfil</a>
+                      <a class="link-dark text-decoration-none mt-2 mb-2 fs-5" routerLink= 'admin' *ngIf="UserCategory.toLowerCase() == 'admin'">Panel de Control</a>
                     </div>
                     <hr style="width: 90%; margin: auto;">
                     <a class="link-dark text-decoration-none fs-5 mt-2 mx-auto" style="margin-bottom: 4em;" (click)="cerrarSesion()" >Salir</a>
                   </div>
               </ng-template>
               <ng-template #NotLogged>
-                <a class="nav-link" routerLink="/user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+                <a class="nav-link" routerLink="user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
               </ng-template>
             </li>
             <li class="nav-item" *ngIf="carrito[0] != null ">

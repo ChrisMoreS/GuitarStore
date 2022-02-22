@@ -52,7 +52,7 @@ export class PerfilComponent implements OnInit {
               result2 => {
                 if (result2.isConfirmed) {
                   this.Cookies.deleteAll('');
-                  this.Cookies.deleteAll('/admin');
+                  this.Cookies.deleteAll('admin');
                   localStorage.clear();
                   window.location.reload();
                 }

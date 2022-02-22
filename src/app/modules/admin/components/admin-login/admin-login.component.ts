@@ -32,7 +32,7 @@ export class AdminLoginComponent implements OnInit {
 
   ComprobarIniciado(){
     if (localStorage.getItem('Categoria') == 'admin') {
-      window.location.href = '/admin';
+      window.location.href = 'admin';
     }
     if (localStorage.getItem('Categoria') == 'registered') {
       window.location.href = '';
@@ -63,13 +63,13 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/admin';
             localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
             localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
             localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
             localStorage.setItem('Categoria', this.usu[0]['CategoriaUsuario']);
             this.Cookie.set('usuario', this.usu[0]['UsuarioUsuario'])
             this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario']);
+            window.location.href = '#/admin';
           }
         });
       }
@@ -82,7 +82,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/admin/login';
+            window.location.href = '#/admin/login';
           }
       }
     )})

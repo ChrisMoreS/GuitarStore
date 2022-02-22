@@ -10,6 +10,5 @@ export interface Productos{
     ImagenProducto: File;
     ExistenciasProducto: String;
     ActivadoProducto: String;
-    idProducto?: String;
 
 }

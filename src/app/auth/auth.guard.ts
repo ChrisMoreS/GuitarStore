@@ -8,11 +8,19 @@ import { ClientesService } from '../services/clientes.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate {  
 
-  constructor(private Cookies: CookieService){}
+  constructor(private Cookies: CookieService){
+
+  }
 
   canActivate(): boolean {
+
+    var DomainName = 'GuitarStore/';
+    
+    if (window.location.hostname !== "localhost") {
+      DomainName = 'GuitarStore/';
+    }
 
     if (this.Cookies.get('categoria').toLowerCase() !== 'admin') {
       Swal.fire({
@@ -34,7 +42,7 @@ export class AuthGuard implements CanActivate {
         confirmButtonText: 'Error'
       }).then( function (result) {
         if (true) {
-          window.location.href = '/admin/login';
+          window.location.href = '#/admin/login';
           return false;
         }
         });

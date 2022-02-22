@@ -35,7 +35,7 @@ export class RegisterUserComponent implements OnInit {
         this.ClientesSVC.InsertarUnCliente(this.form.value).subscribe(
           res => {
             if (res == 'agregado') {
-              window.location.href = '/user/login';
+              window.location.href = '#/user/login';
             }
             if (res == 'error usuario y email') {
               Swal.fire({

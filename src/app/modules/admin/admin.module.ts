@@ -18,6 +18,11 @@ import { DataTablesModule } from 'angular-datatables';
 import { ClienteAgregarComponent } from './components/admindashboard/admin-clientes/cliente-agregar/cliente-agregar.component';
 import { ProductoAgregarComponent } from './components/admindashboard/admin-productos/producto-agregar/producto-agregar.component';
 
+var DomainName = 'GuitarStore/';
+
+if (window.location.hostname !== "localhost") {
+  DomainName = 'GuitarStore/';
+}
 
 @NgModule({
   declarations: [
@@ -25,12 +30,12 @@ import { ProductoAgregarComponent } from './components/admindashboard/admin-prod
     AdminProductosComponent,
     AdminClientesComponent,
     AdminheaderComponent,
-    AdminLoginComponent,
     AdminPantallaprincipalComponent,
+    AdminLoginComponent,
     ClienteEditarComponent,
     ProductoEditarComponent,
     ClienteAgregarComponent,
-    ProductoAgregarComponent
+    ProductoAgregarComponent,
   ],
   imports: [
     CommonModule,
@@ -44,8 +49,8 @@ import { ProductoAgregarComponent } from './components/admindashboard/admin-prod
         {path: 'usuarios/:id', component: ClienteEditarComponent},
         {path: 'agregar/usuarios', component: ClienteAgregarComponent},
       ]},
-      {path: 'login', component: AdminLoginComponent}
-    ]),
+      {path: 'login', component: AdminLoginComponent},
+  ]),
     ReactiveFormsModule,
     FormsModule,
     DataTablesModule,

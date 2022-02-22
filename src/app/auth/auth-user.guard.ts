@@ -8,8 +8,13 @@ import { Observable } from 'rxjs';
 export class AuthUserGuard implements CanActivate {
   canActivate(): boolean {
 
+    var DomainName = 'GuitarStore/';
+    
+    if (window.location.hostname !== "localhost") {
+      DomainName = '';
+    }
     if (!localStorage.getItem('usuario')) {
-      window.location.href = 'user/login';
+      window.location.href = '#/user/login';
       return false;
     }
 

@@ -23,9 +23,9 @@ export class AdmindashboardComponent implements OnInit {
        this.AdminLogged = true;
       }
       if (!localStorage.getItem('usuario')) {
-        this.Cookies.deleteAll('/admin');
+        this.Cookies.deleteAll('admin');
         localStorage.clear();
-        window.location.href = '/admin/login';
+        window.location.href = '#/admin/login';
     }
   }
 

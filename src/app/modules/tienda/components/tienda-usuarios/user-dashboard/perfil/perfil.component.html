@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="container-fluid d-flex justify-content-evenly align-items-center" *ngFor="let cli of cliente">
-        <button class="btn btn-warning" routerLink="/user/editar/{{cli.IDUsuario}}"> Editar Perfil</button>
+        <button class="btn btn-warning" routerLink="user/editar/{{cli.IDUsuario}}"> Editar Perfil</button>
         <button class="btn btn-danger" (click)="BorrarUsuario()"> Borrar Perfil </button>
     </div>
 </div>

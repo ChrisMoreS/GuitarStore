@@ -34,16 +34,16 @@ export class LoginUserComponent implements OnInit {
       console.log(res);
 
       if (this.usu[0]['CategoriaUsuario']) {
-        window.location.href = '';
         localStorage.setItem('idUsuario', this.usu[0]['IDUsuario']);
         localStorage.setItem('usuario', this.usu[0]['UsuarioUsuario']);
         localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
         localStorage.setItem('Categoria', this.usu[0]['CategoriaUsuario']);
-
+        
         if (this.usu[0]['CategoriaUsuario'] == 'Admin') {
-          this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario'], 0, '/admin');
+          this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario'], 0, 'admin');
         }
         
+        window.location.href = '';
       }
 
     }, err => {
@@ -55,7 +55,7 @@ export class LoginUserComponent implements OnInit {
           showConfirmButton: true
         }).then( result => {
           if (result.isConfirmed || result.dismiss) {
-            window.location.href = '/user/login';
+            window.location.href = '#/user/login';
           }
       }
     )})

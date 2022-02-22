@@ -17,6 +17,7 @@ export class TiendaUsuariosComponent implements OnInit {
   ngOnInit(): void {
     this.ComprobarUsuarioIniciado();
   }
+  
 
   ComprobarUsuarioIniciado(){
     if (localStorage.getItem('usuario')) {

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule } from '@angular/router';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { TiendaHeaderComponent } from './components/tienda-header/tienda-header.component';
 import { TiendaFooterComponent } from './components/tienda-footer/tienda-footer.component';
 import { TiendaSobreNosotrosComponent } from './components/tienda-sobre-nosotros/tienda-sobre-nosotros.component';
@@ -25,14 +27,16 @@ import { AuthUserGuard } from 'src/app/auth/auth-user.guard';
 import { LoginUserComponent } from './components/tienda-usuarios/login-user/login-user.component'; 
 import { UserDashboardComponent } from './components/tienda-usuarios/user-dashboard/user-dashboard.component';
 import { RegisterUserComponent } from './components/tienda-usuarios/register-user/register-user.component';
-import { PedidosComponent } from './components/tienda-usuarios/user-dashboard/pedidos/pedidos.component';
-import { DevolverProductoComponent } from './components/tienda-usuarios/user-dashboard/devolver-producto/devolver-producto.component';
 import { PerfilComponent } from './components/tienda-usuarios/user-dashboard/perfil/perfil.component';
-import { EvaluarProductoComponent } from './components/tienda-usuarios/user-dashboard/evaluar-producto/evaluar-producto.component';
 import { GeneralUserComponent } from './components/tienda-usuarios/user-dashboard/general-user/general-user.component';
 import { ProductoDetallesComponent } from './components/tienda-productos/producto-detalles/producto-detalles.component';
 import { EditarUsuarioComponent } from './components/tienda-usuarios/editar-usuario/editar-usuario.component';
 
+var DomainName = 'GuitarStore/';
+
+if (window.location.hostname !== "localhost") {
+  DomainName = 'GuitarStore/';
+}
 
 @NgModule({
   declarations: [
@@ -57,13 +61,10 @@ import { EditarUsuarioComponent } from './components/tienda-usuarios/editar-usua
     LoginUserComponent,
     UserDashboardComponent,
     RegisterUserComponent,
-    PedidosComponent,
     PerfilComponent,
-    DevolverProductoComponent,
-    EvaluarProductoComponent,
     GeneralUserComponent,
     ProductoDetallesComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
   ],
   imports: [
     CommonModule,
@@ -92,12 +93,13 @@ import { EditarUsuarioComponent } from './components/tienda-usuarios/editar-usua
           ]},
           {path: 'login', component: LoginUserComponent},
           {path: 'register', component: RegisterUserComponent}
-        ]},
-        {path: '', redirectTo: 'inicio', pathMatch: 'full'}
-      ]}
-    ]),
+        ]}
+      ]},
+      {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  ]),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [CookieService],
 })

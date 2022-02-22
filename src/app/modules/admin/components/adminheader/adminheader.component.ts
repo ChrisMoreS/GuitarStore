@@ -26,7 +26,7 @@ export class AdminheaderComponent implements OnInit {
 
   cerrarSesion(){
     localStorage.clear();
-    this.Cookie.deleteAll('/admin');
+    this.Cookie.deleteAll('admin');
     window.location.reload();
   }
 

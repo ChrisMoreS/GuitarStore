@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 })
 export class TiendaHeaderComponent implements OnInit {
 
+  filterTerm!: string;
+
   user: boolean = false;
   id: any;
   usuario: any;
@@ -86,7 +88,7 @@ export class TiendaHeaderComponent implements OnInit {
   cerrarSesion(){
     localStorage.clear();
     this.Cookie.deleteAll('', undefined, true, "Strict");
-    this.Cookie.deleteAll('/admin');
+    this.Cookie.deleteAll('admin');
     window.location.reload();
   }
 
