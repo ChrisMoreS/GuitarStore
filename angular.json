@@ -89,8 +89,7 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "browserTarget": "GuitarStore:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "GuitarStore:build"
           }
         },
         "extract-i18n": {

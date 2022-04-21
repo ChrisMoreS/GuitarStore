@@ -38,14 +38,6 @@ import { GeneralUserComponent } from './modules/tienda/components/tienda-usuario
 import { PerfilComponent } from './modules/tienda/components/tienda-usuarios/user-dashboard/perfil/perfil.component';
 import { UserDashboardComponent } from './modules/tienda/components/tienda-usuarios/user-dashboard/user-dashboard.component';
 
-
-
-var DomainName = 'GuitarStore/';
-
-if (window.location.hostname !== "localhost") {
-  DomainName = 'GuitarStore/';
-}
-
 const routes: Routes = [
   {path: '', children: [
     {path: '', component: InicioComponent, children:[
@@ -93,7 +85,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', useHash: true})],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top', useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

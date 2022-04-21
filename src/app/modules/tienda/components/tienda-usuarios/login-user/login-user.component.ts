@@ -39,7 +39,7 @@ export class LoginUserComponent implements OnInit {
         localStorage.setItem('ImagenPerfil', this.usu[0]['FotoPerfilUsuario']);
         localStorage.setItem('Categoria', this.usu[0]['CategoriaUsuario']);
         
-        if (this.usu[0]['CategoriaUsuario'] == 'Admin') {
+        if (this.usu[0]['CategoriaUsuario'] == 'admin') {
           this.Cookie.set('categoria', this.usu[0]['CategoriaUsuario'], 0, 'admin');
         }
         

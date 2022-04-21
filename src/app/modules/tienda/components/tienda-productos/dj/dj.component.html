@@ -10,7 +10,7 @@
                     <h5>{{dj.NombreProducto}}</h5>
                     <p>{{dj.DescripcionProducto}}</p>
                     <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
-                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = 'productos/{{dj.IDProducto}}'>Ver Detalles</button>
+                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '../{{dj.IDProducto}}'>Ver Detalles</button>
                         <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(dj.IDProducto)">Agregar al carrito</button>
                     </div>
                 </div>

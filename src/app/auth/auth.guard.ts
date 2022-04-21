@@ -16,11 +16,6 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
 
-    var DomainName = 'GuitarStore/';
-    
-    if (window.location.hostname !== "localhost") {
-      DomainName = 'GuitarStore/';
-    }
 
     if (this.Cookies.get('categoria').toLowerCase() !== 'admin') {
       Swal.fire({

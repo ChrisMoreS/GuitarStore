@@ -3,14 +3,14 @@
         <h1 class="mb-5 mt-1 ms-5">Guitarras</h1>
     </div>
     <div class="contenedor">
-        <div class="repiteproducto" *ngFor="let guitarras of Guitarras; let i = index" >
-            <div class="carta mb-5 mt-5" *ngIf="guitarras.ActivadoProducto == '1'">
+        <div class="repiteproducto mb-5" *ngFor="let guitarras of Guitarras; let i = index" >
+            <div class="carta mt-5 mb-5" *ngIf="guitarras.ActivadoProducto == '1'">
                 <img src="assets/img/products/{{guitarras.ImagenProducto}}">
                 <div class="cuerpo-carta">
                     <h5>{{guitarras.NombreProducto}}</h5>
                     <p>{{guitarras.DescripcionProducto}}</p>
                     <div class="container-fluid mt-2 d-flex flex-column justify-content-between align-items-center">
-                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = 'productos/{{guitarras.IDProducto}}'>Ver Detalles</button>
+                        <button class="boton btn btn-outline-dark mb-1 mt-1 w-50" routerLink = '../{{guitarras.IDProducto}}'>Ver Detalles</button>
                         <button class="boton btn btn-outline-dark mb-1 mt-1 w-100" (click)="CarritoAgregar(guitarras.IDProducto)">Agregar al carrito</button>
                     </div>
                 </div>

@@ -47,6 +47,7 @@
                   <i class="fa fa-tags fa-sm"></i>
                 </button>
                 <div class="dropdown-menu" style="width: 18em; height: 20em; overflow-y: scroll; background-color: white !important;" aria-labelledby="dropdownMenuButton1">
+                    <h3 class="text-center fs-4">Carrito</h3>
                     <div *ngFor="let producto of productos, let i = index," style="width: 100%; margin: 0; padding: 0;" class="dropdown-item d-flex flex-column justify-content-center align-items-center">
                       <img style="object-fit: scale-down;" height="75px" width="75px" src="assets/img/products/{{producto[0].ImagenProducto}}" *ngIf="producto[0].ImagenProducto">
                       <a class="link-dark text-decoration-none text-center">
